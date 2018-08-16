@@ -1,0 +1,67 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+import { MatDialogModule} from '@angular/material';
+import { AppRoutingModule } from './app.routing';
+import { ComponentsModule } from './components/components.module';
+import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AssessmentComponent } from './assessment/assessment.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule, ReactiveFormsModule } from '../../node_modules/@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UploadComponent } from './upload/upload.component';
+import { HttpClientModule } from '@angular/common/http';
+import {HttpModule} from '@angular/http';
+import { HttpService } from './http.service';
+import { ListuploadComponent } from './listupload/listupload.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+
+const appRoutes: Routes = [
+
+  {path : 'register', component : RegisterComponent},
+  {path : 'login', component : LoginComponent},
+  {path : 'not-found', component : PageNotFoundComponent},
+  {path: 'fileUpload', component: UploadComponent},
+  {path: 'listUpload', component: ListuploadComponent},
+  {path: 'attendance', component: AttendanceComponent},
+  {path : '**', redirectTo : '/not-found'}
+];
+
+@NgModule({
+  exports:[
+    MatDialogModule,
+
+  ],
+  imports: [
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpModule,
+    ComponentsModule,
+    MatDialogModule,
+    AppRoutingModule,
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
+ 
+  ],
+  declarations: [
+    AppComponent,
+    AdminLayoutComponent,  
+    RegisterComponent,
+    LoginComponent,
+    PageNotFoundComponent,
+    UploadComponent,
+    ListuploadComponent,
+    AttendanceComponent 
+  ],  
+
+  providers: [HttpService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

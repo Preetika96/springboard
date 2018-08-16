@@ -1,0 +1,77 @@
+<div id = "register_body">
+  <div id = "layer">
+      <div class = "container" id = "signup_title">
+        <p>Sign up Form</p>
+      </div>
+      <div class="container" id = "register_form">
+          <div class = "row">
+            <div class = "col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2" >
+              <form [formGroup] = 'signUpForm' (ngSubmit) = 'onSubmit()' #f>
+                    <div class = "form-group">
+                      <input type="text" placeholder = "Emplyee-Code" class = "form-control" id = 'empCode' formControlName = "empCode" name = 'empCode'>
+                      <span *ngIf="!signUpForm.get('empCode').valid && signUpForm.get('empCode').touched" class = "help-block">
+                          <span *ngIf = "signUpForm.get('empCode').errors['empCodeIsNotPresent'] && !signUpForm.get('empCode').errors['required']" style = "color :red">Employee code is not present</span>
+                          <span *ngIf = "signUpForm.get('empCode').errors['required']" style = "color :red">Employee code is required</span>
+                      </span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder = "Name" class="form-control" id = 'name' formControlName = "name" name='name' >
+                        <span *ngIf="!signUpForm.get('name').valid && signUpForm.get('name').touched" class = "help-block">
+                          <span *ngIf = "signUpForm.get('name').errors['required']" style = "color :red">Name is required</span>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder = "E-Mail" class="form-control" id = 'email' name='email' formControlName = "email">
+                        <span *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched" class = "help-block">
+                            <span *ngIf = "signUpForm.get('email').errors['email']" style = "color :red">Please enter valid E-mail</span>
+                            <span *ngIf = "signUpForm.get('email').errors['required']" style = "color :red">E-mail is required</span>
+                        </span>
+                    </div>
+                  <div class="form-group">
+                      <input type="text" placeholder = "Contact" class="form-control" id = 'contact' name='contact'  formControlName = "contact">
+                      <span *ngIf="!signUpForm.get('contact').valid && signUpForm.get('contact').touched" class = "help-block">
+                          <span *ngIf = "signUpForm.get('contact').errors['incorrectContact'] && !signUpForm.get('contact').errors['required']" style = "color :red">Please enter valid contact details</span>
+                          <span *ngIf = "signUpForm.get('contact').errors['required']" style = "color :red">Contact is required</span>
+                          <span *ngIf = "signUpForm.get('contact').errors['minlength'] || signUpForm.get('contact').errors['maxlength']" style = "color :red">Only 10 digit phone number accepted</span>
+                      </span>
+                  </div>
+                  <label for = "role" style = "margin-bottom: -2em;padding-top : 10px;" class = "field_titles">Role : </label>
+                  <div class="radio">
+                    <ul id = "form_ul">
+                      <li *ngFor = "let role of roles">
+                          <label class = "li_titles">
+                              <input type = "radio" name = "role" formControlName = "role" [value] = "role">{{role}}
+                          </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <label for = "gender" style = "margin-bottom: -2em;padding-top : 10px;"  class = "field_titles">Gender : </label>
+                  <div class="radio">
+                    <ul id = "form_ul">
+                      <li *ngFor = "let gender of genders">
+                          <label class = "li_titles">
+                              <input type = "radio" name = "gender" formControlName = "gender" [value] = "gender">{{gender}}
+                          </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="form-group">
+                      <input type="password" placeholder = "Password"class="form-control" id = 'pwd' name='pwd' formControlName = "password" [(ngModel)] = "pass">
+                      <span *ngIf="!signUpForm.get('password').valid && signUpForm.get('password').touched" class = "help-block">
+                          <span *ngIf = "signUpForm.get('password').errors['minlength']" style = "color :red">Password must have atleast 8 characters</span>
+                          <span *ngIf = "signUpForm.get('password').errors['required']" style = "color :red">Password is required</span>
+                      </span>
+                  </div>
+                  <div class="form-group">
+                      <input type="password" placeholder = "Confirm Password" class="form-control" id = 'cpwd' name='cpwd' formControlName = "confirm_password" [(ngModel)] = "cpass">
+                      <span *ngIf="!signUpForm.get('confirm_password').valid && signUpForm.get('confirm_password').touched" class = "help-block">
+                          <span *ngIf = "signUpForm.get('confirm_password').errors['required']" style = "color :red">Password is required</span>
+                          <span *ngIf = "signUpForm.get('confirm_password').errors['passNotMatch']  && !signUpForm.get('confirm_password').errors['required'] " style = "color :red">Password and Confirm Password is not same</span>
+                      </span>
+                  </div>
+                  <button class="btn btn-primary" type="submit" [disabled]="!signUpForm.valid">Submit</button>
+              </form>
+            </div>
+          </div>
+  </div>
+</div>

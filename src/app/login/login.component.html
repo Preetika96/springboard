@@ -1,0 +1,21 @@
+<div id="login_body">
+  <div id = "layer">
+    <div class = "container" id = "login_form">
+      <div class = "row">
+          <div class = "col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2" >
+            <form [formGroup] = 'loginForm' (ngSubmit) = "onSubmit()">
+              <div class = "form-group">
+                <input type="text" patern="[0-9]+" placeholder = "Employee Code" class="form-control" id = 'empcode' name='empcode' formControlName = "empcode">
+                <span *ngIf = "loginForm.get('empcode').errors['empcodeisnotnum'] && !loginForm.get('empcode').errors['required']" style = "color :red">Please enter valid Employee Code</span>
+              </div>
+              <div class="form-group">
+                  <input type="password" placeholder = "Password" class="form-control" id = 'password' name='password' formControlName = "password">
+                  <span id="sp">{{errorMsg}}</span>
+              </div>  
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

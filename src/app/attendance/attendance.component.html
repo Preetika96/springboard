@@ -1,0 +1,33 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form_main">
+        <h4 class="heading" style="font-size: 25px;">
+          <strong>Generate </strong> Attendance
+          <span></span>
+        </h4>
+        <div class="form">
+          <!-- <form action="contact_send_mail.php" method="post" id="contactFrm" name="contactFrm">
+            <input type="text" required  placeholder="Enter Subject name" value="" name="subject" class="txt" formControlName="file1">
+            <input type="text" required placeholder="Enter Faculty Name" value="" name="faculty" class="txt">
+              <input type="submit" value="Upload Excel" name="submit" class="btn btn-primary btn-lg" style="margin-top: 15px;">
+          </form> -->
+          <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+              <div style="margin-top: 20px;">
+                  <input type="text" required  placeholder="Enter Subject name" value="" name="subject" class="txt" formControlName="field1">
+                  <input type="text" required placeholder="Enter Faculty Name" value="" name="faculty" class="txt" formControlName="field2">
+                  <div>From: <input type="date" required name="startDate" formControlName="field3"></div>
+                  <div>To:<input type="date" required name="startDate" formControlName="field4"></div>
+                  <input type="submit" value="Generate Sheet" name="submit" class="btn btn-primary btn-lg" style="margin-top: 45px;">
+            </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

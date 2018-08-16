@@ -1,0 +1,23 @@
+<div id="header">
+  <div class="wrap group">
+    <div class="head-wrap group">
+      <img id="exo_logo" alt="Logo Exosource" src="../assets/logo.png">
+      <nav>
+        <div id="back_active" style="left: 106px; transition: all 0.3s ease-in-out"></div>
+        <ul>
+        <li ><a id = "dashboard" routerLink = "trainer">Dashboard</a></li>
+          <li><a id="register" routerLink = "/register" >Register</a></li>
+          <li><a id="login" routerLink = "/login" >Login</a></li>
+          <li><a id = "logout">Logout</a></li>
+          <li><a id = "about_us" routerLink = "/developer">About us</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- .head-wrap -->
+  </div>
+  <!-- .wrap < header -->
+</div>
+
+<div id = "main-content" style = "overflow: hidden;">
+  <router-outlet></router-outlet>
+</div>

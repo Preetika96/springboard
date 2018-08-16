@@ -1,0 +1,25 @@
+<div id="header">
+  <div class="wrap group">
+    <div class="head-wrap group">
+      <img id="exo_logo" alt="Logo Exosource" src="../assets/logo.png">
+      <nav>
+        <div id="back_active" style="left: 106px; transition: all 0.3s ease-in-out"></div>
+        <ul>
+            <li><a id="attendance" routerLink = "attendance" >Attendance Excel</a></li>
+            <li><a id="listUpload" routerLink = "listUpload" >Score Upload</a></li>
+            <li><a id="fileUpload" routerLink = "fileUpload" >File Upload</a></li>
+        <li ><a data-anchor="what-we-do" routerLinkActive = "active" [routerLinkActiveOptions]= "{exact:true}">Dashboard</a></li>
+          <li><a id="register" routerLink = "register" >Register</a></li>
+          <li><a id="login" routerLink = "/login" >Login</a></li>
+          <li><a >Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- .head-wrap -->
+  </div>
+  <!-- .wrap < header -->
+</div>
+
+<div id = "main-content" style = "overflow: hidden;">
+  <router-outlet></router-outlet>
+</div>
