@@ -21,7 +21,7 @@
       }
       
       if(empty($errors)==true){
-         move_uploaded_file($file_tmp,"files/".$file_name);
+         move_uploaded_file($file_tmp,$file_name);
          echo "Success";
          //iterateRecords();
       }else{
