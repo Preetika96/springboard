@@ -3,6 +3,7 @@ import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Headers } from '@angular/http';
 import { Constants } from '../Constants';
 import { HttpService } from '../http.service';
+import { SessionService } from '../session.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { HttpService } from '../http.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService , private Session:SessionService) {}
   ngOnInit() {
     this.loginForm = new FormGroup({
       empcode: new FormControl(null, [
@@ -28,12 +29,19 @@ export class LoginComponent implements OnInit {
     }
     return null;
   }
-
+  message;
   onSubmit() {
     const header = new Headers({ 'Content-Type': 'text-plain' });
     this.httpService.post_api(Constants.LOGIN, this.loginForm.value, header)
       .subscribe(data => {
-        console.log(data);
+        this.message=data;
       });
+      if(this.message==="Login Successful"){
+        this.Session.setloginState(true);
+        this.Session.setSession_var(this.loginForm.value.username,this.loginForm.value.empcode);
+      }
+      else{
+        this.loginForm.reset();
+      }
   }
 }
