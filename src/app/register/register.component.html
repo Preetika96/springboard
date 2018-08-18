@@ -40,7 +40,7 @@
                     <ul id = "form_ul">
                       <li *ngFor = "let role of roles">
                           <label class = "li_titles">
-                              <input type = "radio" name = "role" formControlName = "role" [value] = "role">{{role}}
+                              <input type = "radio" name = "role" formControlName = "role" [value] = "role"><span style="margin-left: 0.5em;">{{role}}</span>
                           </label>
                       </li>
                     </ul>
@@ -50,7 +50,7 @@
                     <ul id = "form_ul">
                       <li *ngFor = "let gender of genders">
                           <label class = "li_titles">
-                              <input type = "radio" name = "gender" formControlName = "gender" [value] = "gender">{{gender}}
+                              <input type = "radio" name = "gender" formControlName = "gender" [value] = "gender"><span style="margin-left: 0.5em;">{{gender}}</span>
                           </label>
                       </li>
                     </ul>

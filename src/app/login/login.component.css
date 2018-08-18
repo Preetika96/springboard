@@ -30,6 +30,7 @@
 #div_login{
   margin-left: 6em;
 }
+
 input[type = "email"], input[type = "text"], input[type = "password"] {
   width: 80%;
   padding: 10px 15px 10px 0;
@@ -51,4 +52,18 @@ input[type = "email"], input[type = "text"], input[type = "password"] {
 
   font-size : larger;
   display: none;
+}
+
+.circle-login {
+  border-radius: 50% !important;
+  width: 262px !important;
+  margin-left: 35em !important;
+  background: linear-gradient(#5d4b89,#43845c,#334346) !important;
+  transition: all 0.35s ease-in-out;
+  animation: rotate 0.5s infinite linear;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

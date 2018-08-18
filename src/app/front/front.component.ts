@@ -12,4 +12,15 @@ export class FrontComponent implements OnInit {
   ngOnInit() {
   }
 
+  onLogin(){
+    document.getElementById("back_active").style.left = "350px";
+  }
+
+  onAbout(){
+    document.getElementById("back_active").style.left = "450px";
+  }
+
+  onRegister(){
+    document.getElementById("back_active").style.left = "244px";
+  }
 }

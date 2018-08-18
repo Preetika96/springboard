@@ -25,10 +25,20 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     const header = new Headers({ 'Content-Type': 'text/plain' });
+    let ele = document.getElementById('div_login');
+      ele.style.opacity = '0';
+      ele.parentElement.parentElement.classList.add('circle-login');
+    setTimeout(function(){
+      let ele = document.getElementById('div_login');
+      ele.style.opacity = '1';
+      ele.parentElement.parentElement.classList.remove('circle-login');
+    },1000);
+
+   /* const header = new Headers({ 'Content-Type': 'text-plain' });
     this.httpService.post_api(Constants.LOGIN, this.loginForm.value, header)
       .subscribe(data => {
         console.log(data);
       });
-      this.router.navigate(['/trainer/dashboard']);
+    *////  this.router.navigate(['/trainer/dashboard']); 
   }
 }

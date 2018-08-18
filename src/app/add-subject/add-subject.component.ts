@@ -15,23 +15,28 @@ export class AddSubjectComponent implements OnInit {
   subjectForm: FormGroup;
   name: string;
   code: string;
-  subjects: { name: string; code: string }[] = [];
+  type="";
+  types = ["Client-Side", "Server-side" , "Database"]
+  subjects  : {name:string, type : string}[] = [];
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.subjectForm = new FormGroup({
-      name: new FormControl(null, [Validators.required]),
-      code: new FormControl(null, [Validators.required])
+      name: new FormControl(null, [Validators.required])      
     });
   }
 
-  onSubmit() {
-    this.code = this.subjectForm.value.code;
+  showType(type){
+    this.type = type;
+    alert(this.type);
+  }
+
+  onSubmit() {   
     this.name = this.subjectForm.value.name;
-    if (this.code === null || this.name === null) {
+    if (this.type === "" || this.name === null) {
       alert('Values cannot be empty');
     } else {
-      this.subjects.push({ name: this.name, code: this.code });
+      this.subjects.push({name : this.name ,type : this.type});
       alert(this.name);
     }
   }
