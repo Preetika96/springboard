@@ -51,6 +51,7 @@
   color: #ffffff;
   width: 105px;
   height: 76px;
+  left: 243px;
 }
 
 #header ul {
@@ -64,6 +65,7 @@
   list-style-type: none;
   -moz-user-select: none;
   -webkit-user-select: none;
+  margin-left: 15em;
 }
 
 ul, menu, dir {

@@ -12,8 +12,14 @@ label{
     width: max-content;
 }
 
+input[type = "submit"]{
+    margin-left: 2em;
+    width: 9em;
+ }
+
 #show_button{
-    float: left;
+    margin-top: -5.3em;
+    margin-left: 15em;
     position: absolute;
-    margin-left: 16em;
 }
+

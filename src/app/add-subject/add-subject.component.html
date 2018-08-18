@@ -6,15 +6,25 @@
                   <div class = "form-group">
                     <label for = "name">Subject Name :</label>
                     <input type = "text" id = "name" name = "name" class = "form-control" formControlName = "name">
+          
                   </div>
-                  <div class = "form-group" id ="code_div">
-                      <label for = "name">Subject Code :</label>
-                      <input type = "text" id = "code" name = "code" class = "form-control" formControlName = "code">
-                  </div>
+                  <div class ="form-group">
+                      <div class="dropdown"style ="margin-left: 0em;">
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" >
+                          Select Type
+                        </button>
+                       <ul class = "dropdown-menu" role = "menu">
+                         <li role = "presentaion" *ngFor= "let type of types">
+                           <a role = "menuitem" (click) = "showType(type)" >{{type}}</a>
+                         </li>
+                       </ul>
+                    </div>
+                </div>
+                  
                   <input type = "submit" class = "btn btn-primary">
-                  <input type = "button" class = "btn btn-warning" value = "Show subjects" (click) = "showSubject()" id = "show_button">
                 </form>
-                
+               
+                <input type = "button" class = "btn btn-warning" value = "Show subjects" (click) = "showSubject()" id = "show_button">
             </div>
         </div>
         <hr>
