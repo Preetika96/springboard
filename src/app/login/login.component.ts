@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Headers } from '@angular/http';
@@ -11,22 +12,15 @@ import { HttpService } from '../http.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private httpService: HttpService) {}
+  errorMsg = "sdfsd";
+  constructor(private httpService: HttpService, private router:Router ) {}
   ngOnInit() {
     this.loginForm = new FormGroup({
       empcode: new FormControl(null, [
         Validators.required,
-        this.invalidempcode.bind(this)
       ]),
       password: new FormControl(null, [Validators.required])
     });
-  }
-
-  invalidempcode(control: FormControl): { [s: string]: boolean } {
-    if (isNaN(control.value)) {
-      return { empcodeisnotnum: true };
-    }
-    return null;
   }
 
   onSubmit() {
@@ -35,5 +29,6 @@ export class LoginComponent implements OnInit {
       .subscribe(data => {
         console.log(data);
       });
+      this.router.navigate(['/trainer/dashboard']); 
   }
 }

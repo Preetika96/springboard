@@ -26,7 +26,7 @@ export class ListuploadComponent {
     _formData.append('scoresFile', this.filedata);
     let body = _formData;
 
-    this.httpService.get_api(Constants.UPLOAD_SCORES, body, 'text').subscribe(
+    this.httpService.cpost_api(Constants.UPLOAD_SCORES, body, 'text').subscribe(
       data => {
         console.log('Scores Uploaded to DB successfully: ', data);
       },
