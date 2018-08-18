@@ -8,7 +8,6 @@ import { UserProfileComponent } from '../../user-profile/user-profile.component'
 import { AssessmentComponent } from '../../assessment/assessment.component';
 
 
-
 import {MatDialogModule} from '@angular/material';
 
 
@@ -37,7 +36,7 @@ import {
     DashboardComponent,
     UserProfileComponent,
     AssessmentComponent,
-  
+
     DialogOverviewExampleDialog,
   
   ],

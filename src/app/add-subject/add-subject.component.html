@@ -1,0 +1,25 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <form  [formGroup] = 'subjectForm' (ngSubmit) = 'onSubmit()' #f>
+                  <div class = "form-group">
+                    <label for = "name">Subject Name :</label>
+                    <input type = "text" id = "name" name = "name" class = "form-control" formControlName = "name">
+                  </div>
+                  <div class = "form-group" id ="code_div">
+                      <label for = "name">Subject Code :</label>
+                      <input type = "text" id = "code" name = "code" class = "form-control" formControlName = "code">
+                  </div>
+                  <input type = "submit" class = "btn btn-primary">
+                  <input type = "button" class = "btn btn-warning" value = "Show subjects" (click) = "showSubject()" id = "show_button">
+                </form>
+                
+            </div>
+        </div>
+        <hr>
+        <div class = "row">
+          <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

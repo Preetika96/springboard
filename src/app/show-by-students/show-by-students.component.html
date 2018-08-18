@@ -1,0 +1,15 @@
+<div>
+    <div class="dropdown">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+          Select Student
+        </button>
+       <ul class = "dropdown-menu" role = "menu">
+         <li role = "presentaion" *ngFor= "let student of students">
+           <a role = "menuitem" (click) = "showAssessment(student)" >{{student}}</a>
+         </li>
+       </ul>
+    </div>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+</div>

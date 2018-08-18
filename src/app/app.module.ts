@@ -20,11 +20,22 @@ import {HttpModule} from '@angular/http';
 import { HttpService } from './http.service';
 import { ListuploadComponent } from './listupload/listupload.component';
 import { AttendanceComponent } from './attendance/attendance.component';
+import { AddAssessmentComponent } from './add-assessment/add-assessment.component';
+import { TrainerDashboardComponent } from './trainer-dashboard/trainer-dashboard.component';
+import { TrainerLayoutComponent } from './layouts/trainer-layout/trainer-layout.component';
+import { FrontComponent } from './front/front.component';
+import { DevelopersComponent } from './developers/developers.component';
+
+
 
 const appRoutes: Routes = [
+  {path : '',component:FrontComponent,children:[
+    {path : '' , component : RegisterComponent},
+    {path : 'register', component : RegisterComponent},
+    {path : 'login', component : LoginComponent},
+    {path : 'developer', component :DevelopersComponent }
+  ]},
 
-  {path : 'register', component : RegisterComponent},
-  {path : 'login', component : LoginComponent},
   {path : 'not-found', component : PageNotFoundComponent},
   {path: 'fileUpload', component: UploadComponent},
   {path: 'listUpload', component: ListuploadComponent},
@@ -58,7 +69,13 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     UploadComponent,
     ListuploadComponent,
-    AttendanceComponent 
+    AttendanceComponent,
+    TrainerLayoutComponent,
+    FrontComponent,
+    DevelopersComponent
+   
+   
+
   ],  
 
   providers: [HttpService],

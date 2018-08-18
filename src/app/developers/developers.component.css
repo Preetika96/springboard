@@ -1,10 +1,50 @@
+h2{
+  text-align: center;
+  color: #06508D;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-size: xx-large;
+
+}
+
+hr{
+  margin-top:15px;
+  width:39em;
+}
+#dev_div{
+
+}
 .card{
     float : left;
-    margin-left : 17em;
+    margin-left : 24em;
     margin-top : 3em;
+    box-shadow: 0 0 10px 0px gray;
+    width:18em;
+    border-radius: 1em;
+
 }
+
 
 .card .card-img-top{
     height : 15em;
     width : 100%;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.btn{
+  margin-left: 6.3em;
+  margin-bottom: 0.7em;
+  box-shadow: 0 0 10px 0px gray;
+  background-color: #06508D
+}
+
+
+.card-title{
+  padding-left: 4em;
+  font-weight : bold;
+}
+
+.card-text{
+  padding-left: 2.7em;
 }

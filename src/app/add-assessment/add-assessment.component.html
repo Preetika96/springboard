@@ -1,0 +1,35 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="alert alert-dark">
+          Please upload only XLXS or XLS file. <strong style = "color :brown">Note: Format of excel file is empcode, empname, score</strong> 
+      </div>
+      <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+          
+            <form (ngSubmit) = 'onSubmit()'  #f = "ngForm">
+              <div class = "form-group">
+                <label class="btn btn-primary" for="ass_to_upload" style = "width:14em">
+                  <input type = "file"  (change)="fileEvent($event)" id = "ass_to_upload">
+                  Select File
+                </label>
+              </div>
+              <span id = "name_sp" style = "display : none;color:cornflowerblue;margin-left:0.4em">You select {{filedata.name}}</span>
+              <div class="dropdown" >
+                  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                    Select Subject
+                  </button>
+                 <ul class = "dropdown-menu" role = "menu">
+                   <li role = "presentaion" *ngFor= "let subject of subjects">
+                     <a role = "menuitem" (click) = "showStudent(subject)" >{{subject}}</a>
+                   </li>
+                 </ul>
+              </div>
+              <div style = "margin-top:0.6em">
+                  <input type = "submit" value = "Upload Score" class ="btn btn-warning" style = "width:14em;text-align: center;">
+              </div>
+             
+            </form>
+          </div>
+      </div>
+  </div>
+</div>

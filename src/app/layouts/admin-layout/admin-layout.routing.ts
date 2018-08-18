@@ -50,5 +50,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'assessment',     component: AssessmentComponent },
+
     
 ];
