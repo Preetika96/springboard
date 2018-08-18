@@ -9,4 +9,5 @@ import { $ } from '../../node_modules/protractor';
 })
 export class AppComponent {
   title = 'springBoard';
+  template = `<img src="../assets/Infinity loading.gif" />`
 }

@@ -25,6 +25,7 @@ import { TrainerDashboardComponent } from './trainer-dashboard/trainer-dashboard
 import { TrainerLayoutComponent } from './layouts/trainer-layout/trainer-layout.component';
 import { FrontComponent } from './front/front.component';
 import { DevelopersComponent } from './developers/developers.component';
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 
 
@@ -58,6 +59,7 @@ const appRoutes: Routes = [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    Ng4LoadingSpinnerModule.forRoot(),
     RouterModule.forRoot(appRoutes)
  
   ],
