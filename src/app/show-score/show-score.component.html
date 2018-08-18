@@ -1,0 +1,26 @@
+<div class="main-content" style = "margin-top: 1em">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <form [formGroup] = 'scoreForm' (ngSubmit) = 'onSubmit()' #f>
+              <div class="radio">
+                <ul id = "form_ul">
+                  <li *ngFor = "let show of shows">
+                      <label class = "li_titles">
+                          <input type = "radio" name = "show" formControlName = "show" [value] = "show">{{show}}
+                      </label>
+                  </li>
+                </ul>
+              </div>
+              <input type="submit" value = "Show" class = "btn btn-primary">
+            </form> 
+          </div>
+      </div>
+      <hr>
+      <div class = "row">
+        <div class= "col-lg-3 col-md-6 col-sm-6">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+  </div>
+</div>
