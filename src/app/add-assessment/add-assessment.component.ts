@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpService } from '../http.service';
 import { Constants } from '../Constants';
+import { Ng4LoadingSpinnerService } from '../../../node_modules/ng4-loading-spinner';
 @Component({
   selector: 'app-add-assessment',
   templateUrl: './add-assessment.component.html',
@@ -14,7 +15,9 @@ export class AddAssessmentComponent implements OnInit {
   subjects = ['html', 'css'];
   subject = '';
   selectedFile = '';
-  constructor(private httpService: HttpService) {}
+  constructor(  private httpService: HttpService,
+                private spinnerService: Ng4LoadingSpinnerService
+             ) {}
 
   ngOnInit() {}
 
@@ -43,14 +46,15 @@ export class AddAssessmentComponent implements OnInit {
     if (this.filedata === '' || this.subject === '') {
       alert('Please select a file to upload and select a subject too');
     } else {
-
+      this.spinnerService.show();
       let _formData = new FormData();
     _formData.append('scoresFile', this.filedata);
     _formData.append('subjectName', this.subject);
 
       this.httpService.cpost_api(Constants.UPLOAD_SCORES, _formData, 'text')
         .subscribe(data => {
-          console.log(data);
+          this.spinnerService.hide();
+          alert(data);
         });
     }
   }

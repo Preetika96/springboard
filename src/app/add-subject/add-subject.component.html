@@ -5,19 +5,20 @@
                 <form  [formGroup] = 'subjectForm' (ngSubmit) = 'onSubmit()' #f>
                   <div class = "form-group">
                     <label for = "name">Subject Name :</label>
-                    <input type = "text" id = "name" name = "name" class = "form-control" formControlName = "name">
+                    <input type = "text" id = "name" name = "name" placeholder="Enter Subject Name" class = "form-control" formControlName = "name" style="border: 1px black solid;">
           
                   </div>
                   <div class ="form-group">
                       <div class="dropdown"style ="margin-left: 0em;">
-                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" >
-                          Select Type
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" >                          
+                          <span id = "sub_type" style = "display : flex;color:red;margin-left:0.4em">Selected Category: {{type}}</span>
                         </button>
                        <ul class = "dropdown-menu" role = "menu">
                          <li role = "presentaion" *ngFor= "let type of types">
                            <a role = "menuitem" (click) = "showType(type)" >{{type}}</a>
                          </li>
                        </ul>
+                       
                     </div>
                 </div>
                   

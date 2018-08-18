@@ -38,7 +38,7 @@ export class AddMaterialsComponent implements OnInit {
     _formData.append('material', this.filedata);    
     _formData.append('material_sub', this.subject);
 
-      this.httpService.cpost_api(Constants.UPLOAD_SCORES, _formData, 'text')
+      this.httpService.cpost_api(Constants.ADD_MATERIAL, _formData, 'text')
         .subscribe(data => {
           console.log(data);
         });
