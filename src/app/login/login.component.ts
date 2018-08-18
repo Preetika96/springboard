@@ -12,7 +12,7 @@ import { HttpService } from '../http.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  errorMsg = "sdfsd";
+  errorMsg = "";
   constructor(private httpService: HttpService, private router:Router ) {}
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -24,11 +24,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    const header = new Headers({ 'Content-Type': 'text-plain' });
+    const header = new Headers({ 'Content-Type': 'text/plain' });
     this.httpService.post_api(Constants.LOGIN, this.loginForm.value, header)
       .subscribe(data => {
         console.log(data);
       });
-      this.router.navigate(['/trainer/dashboard']); 
+      this.router.navigate(['/trainer/dashboard']);
   }
 }

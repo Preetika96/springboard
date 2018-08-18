@@ -5,15 +5,16 @@
             <form (ngSubmit) = 'onSubmit()'  #f = "ngForm">
               <div class = "form-group">
                 <label class="btn btn-primary" for="material_to_upload" style = "width:14em">
-                  <input type = "file"  (change)="fileEvent($event)" id = "ass_to_upload" >
+                  <input type = "file"  (change)="fileEvent($event)" id = "material_to_upload" >
                   Select File
                 </label>
               </div>
-              <span id = "name_sp" style = "display : none;color:cornflowerblue;margin-left:0.4em">You select {{filedata.name}}</span>
+              <span id = "name_sp" style = "display : none;color:cornflowerblue;margin-left:0.4em">{{selectedFile}}</span>
               <div class="dropdown" >
                   <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
                     Select Subject
                   </button>
+                  <span id = "sub_sp" style = "display : none;color:red;margin-left:0.4em">Selected Subject: {{subject}}</span>
                  <ul class = "dropdown-menu" role = "menu">
                    <li role = "presentaion" *ngFor= "let subject of subjects">
                      <a role = "menuitem" (click) = "showStudent(subject)" >{{subject}}</a>
