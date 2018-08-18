@@ -1,7 +1,7 @@
 <div class="main-content">
   <div class="container-fluid">
       <div class="alert alert-dark">
-          Please upload only XLXS or XLS file. <strong style = "color :brown">Note: Format of excel file is empcode, empname, score</strong> 
+          Please upload only XLXS or XLS file. <strong style = "color :brown">Note: Format of excel file is empcode, empname, percent(Without any heading)</strong> 
       </div>
       <div class="row">
           <div class="col-lg-3 col-md-6 col-sm-6">
@@ -13,11 +13,12 @@
                   Select File
                 </label>
               </div>
-              <span id = "name_sp" style = "display : none;color:cornflowerblue;margin-left:0.4em">You select {{filedata.name}}</span>
+              <span id = "name_sp" style = "display : none;color:red;margin-left:0.4em">{{selectedFile}}</span>
               <div class="dropdown" >
                   <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
                     Select Subject
                   </button>
+                <span id = "sub_sp" style = "display : none;color:red;margin-left:0.4em">Selected Subject: {{subject}}</span>
                  <ul class = "dropdown-menu" role = "menu">
                    <li role = "presentaion" *ngFor= "let subject of subjects">
                      <a role = "menuitem" (click) = "showStudent(subject)" >{{subject}}</a>
