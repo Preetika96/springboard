@@ -21,12 +21,15 @@
   margin-left:60em;
   height : 100%;
   /* position: absolute; */
- padding-bottom: 2em;
+ //padding-bottom: 2em;
   margin-top: 12em;
   text-align: center;
   margin-left: 30em;
 }
 
+#div_login{
+  margin-left: 6em;
+}
 input[type = "email"], input[type = "text"], input[type = "password"] {
   width: 80%;
   padding: 10px 15px 10px 0;
