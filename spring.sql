@@ -37,6 +37,7 @@ CREATE TABLE `assessment_table` (
 
 LOCK TABLES `assessment_table` WRITE;
 /*!40000 ALTER TABLE `assessment_table` DISABLE KEYS */;
+INSERT INTO `assessment_table` VALUES (1,1,'Jagannath Pidaparthy',90),(1,2,'Jagannath Pidaparthy',90),(1,3,'Jagannath Pidaparthy',90),(1,4,'Jagannath Pidaparthy',90),(1,5,'Jagannath Pidaparthy',90),(1,6,'Jagannath Pidaparthy',90),(1,7,'Jagannath Pidaparthy',90),(1,8,'Jagannath Pidaparthy',90),(1,9,'Jagannath Pidaparthy',90),(2,1,'Vishal Patil',82),(2,2,'Vishal Patil',82),(2,3,'Vishal Patil',82),(2,4,'Vishal Patil',82),(2,5,'Vishal Patil',82),(2,6,'Vishal Patil',82),(2,7,'Vishal Patil',82),(2,8,'Vishal Patil',82),(2,9,'Vishal Patil',82),(3,1,'Prretika Shetty',99),(3,2,'Prretika Shetty',99),(3,3,'Prretika Shetty',99),(3,4,'Prretika Shetty',99),(3,5,'Prretika Shetty',99),(3,6,'Prretika Shetty',99),(3,7,'Prretika Shetty',99),(3,8,'Prretika Shetty',99),(3,9,'Prretika Shetty',99),(4,1,'Sagar Mishra',99),(4,2,'Sagar Mishra',99),(4,3,'Sagar Mishra',99),(4,4,'Sagar Mishra',99),(4,5,'Sagar Mishra',99),(4,6,'Sagar Mishra',99),(4,7,'Sagar Mishra',99),(4,8,'Sagar Mishra',99),(4,9,'Sagar Mishra',99),(5,1,'Shubham Mishra',93),(5,2,'Shubham Mishra',93),(5,3,'Shubham Mishra',93),(5,4,'Shubham Mishra',93),(5,5,'Shubham Mishra',93),(5,6,'Shubham Mishra',93),(5,7,'Shubham Mishra',93),(5,8,'Shubham Mishra',93),(5,9,'Shubham Mishra',93),(6,1,'Kanchan Soni',95),(6,2,'Kanchan Soni',95),(6,3,'Kanchan Soni',95),(6,4,'Kanchan Soni',95),(6,5,'Kanchan Soni',95),(6,6,'Kanchan Soni',95),(6,7,'Kanchan Soni',95),(6,8,'Kanchan Soni',95),(6,9,'Kanchan Soni',95),(7,1,'Jai Lohani',92),(7,2,'Jai Lohani',92),(7,3,'Jai Lohani',92),(7,4,'Jai Lohani',92),(7,5,'Jai Lohani',92),(7,6,'Jai Lohani',92),(7,7,'Jai Lohani',92),(7,8,'Jai Lohani',92),(7,9,'Jai Lohani',92),(8,1,'Korol Dhanda',85),(8,2,'Korol Dhanda',85),(8,3,'Korol Dhanda',85),(8,4,'Korol Dhanda',85),(8,5,'Korol Dhanda',85),(8,6,'Korol Dhanda',85),(8,7,'Korol Dhanda',85),(8,8,'Korol Dhanda',85),(8,9,'Korol Dhanda',85),(9,1,'kaustubh Srivastava',97),(9,2,'kaustubh Srivastava',97),(9,3,'kaustubh Srivastava',97),(9,4,'kaustubh Srivastava',97),(9,5,'kaustubh Srivastava',97),(9,6,'kaustubh Srivastava',97),(9,7,'kaustubh Srivastava',97),(9,8,'kaustubh Srivastava',97),(9,9,'kaustubh Srivastava',97),(10,1,'Purva Shinde',80),(10,2,'Purva Shinde',80),(10,3,'Purva Shinde',80),(10,4,'Purva Shinde',80),(10,5,'Purva Shinde',80),(10,6,'Purva Shinde',80),(10,7,'Purva Shinde',80),(10,8,'Purva Shinde',80),(10,9,'Purva Shinde',80);
 /*!40000 ALTER TABLE `assessment_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,7 +53,7 @@ CREATE TABLE `subject_list` (
   `subject_name` varchar(50) DEFAULT NULL,
   `category` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`subject_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +85,7 @@ CREATE TABLE `training_material` (
 
 LOCK TABLES `training_material` WRITE;
 /*!40000 ALTER TABLE `training_material` DISABLE KEYS */;
-INSERT INTO `training_material` VALUES (1,'uploads/Builder Occupancy Certificate_Flat No.208.pdf');
+INSERT INTO `training_material` VALUES (1,'uploads/Builder Occupancy Certificate_Flat No.208.pdf'),(4,'material/Mongo Training.pptx'),(3,'material/JavaScript.pdf'),(1,'material/HTML_5.pdf'),(1,'material/HTML-Assignment.docx'),(2,'material/CSS_3_version_1.1.pdf'),(2,'material/CSS-Assignment.docx');
 /*!40000 ALTER TABLE `training_material` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,6 +114,7 @@ CREATE TABLE `user_details` (
 
 LOCK TABLES `user_details` WRITE;
 /*!40000 ALTER TABLE `user_details` DISABLE KEYS */;
+INSERT INTO `user_details` VALUES (123456,'Tester','test@gmail.com',1234567890,'student','male','1bbd886460827015e5d605ed44252251','Tell me about yourself'),(654321,'Nisha Waikar','s@gm.com',1234567890,'trainer','female','1bbd886460827015e5d605ed44252251','Tell me about yourself'),(123321,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52508,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52498,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52538,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52510,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52512,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52506,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself');
 /*!40000 ALTER TABLE `user_details` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -125,4 +127,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-18 20:16:46
+-- Dump completed on 2018-08-19 20:09:03

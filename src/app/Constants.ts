@@ -10,7 +10,7 @@ export class Constants {
   static ADD_MATERIAL   = Constants.BASE_URL + '/materialSave.php';
   static ADD_SUBJECT    = Constants.BASE_URL + '/addSubject.php';  
   static DASHBOARD      = Constants.BASE_URL + "/dashboard.php";
-  static USER_PROFILE   = Constants.BASE_URL + "/user_profile.php";  
+  static USER_PROFILE   = Constants.BASE_URL + "/user-profile.php";  
   static FETCH_STOCK_DATA = Constants.BASE_URL + '/fetchStockData.php';
 }
 

@@ -12,13 +12,14 @@ import { TrainerDashboardComponent } from '../../trainer-dashboard/trainer-dashb
 // import { TableListComponent } from '../../table-list/table-list.component';
 // import { ShowScoreComponent } from '../../show-score/show-score.component';
 import { AddAssessmentComponent } from '../../add-assessment/add-assessment.component';
-import { TrainerUserProfileComponent } from '../../trainer-user-profile/trainer-user-profile.component';
+import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { AddMaterialsComponent } from '../../add-materials/add-materials.component';
 // import { AddMaterialsComponent } from '../../add-materials/add-materials.component';
 
 // import { IconsComponent } from '../../icons/icons.component';
 import { ShowScoreComponent } from '../../show-score/show-score.component';
 import {MatDialogModule} from '@angular/material';
+import { TrainingMaterialComponent } from '../../training-material/training-material.component';
 
 // import { UpgradeComponent } from '../../upgrade/upgrade.component';
 
@@ -57,7 +58,7 @@ import { ShowStudentListComponent } from '../../show-by-assessment/show-student-
     // AddMaterialsComponent,
     AddAssessmentComponent,
     TrainerDashboardComponent,
-    TrainerUserProfileComponent,
+    UserProfileComponent,
     AddMaterialsComponent,
     ShowScoreComponent,
     ShowAssessmentListComponent,
@@ -70,7 +71,8 @@ import { ShowStudentListComponent } from '../../show-by-assessment/show-student-
     // ShowAssessmentListComponent,
      NoneComponentComponent,
     // ShowStudentListComponent,
-     ShowSubjectsComponent
+     ShowSubjectsComponent,
+     TrainingMaterialComponent
   ],
   bootstrap: [TrainerDashboardComponent],
 })

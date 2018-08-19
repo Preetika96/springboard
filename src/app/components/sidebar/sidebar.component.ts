@@ -11,7 +11,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/student/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
     { path: '/student/user-profile', title: 'User Profile',  icon:'person', class: '' },
     { path: '/student/assessment', title: 'Assessment',  icon:'content_paste', class: '' },
-    { path: '/student/typography', title: 'Training Materials',  icon:'library_books', class: '' },
+    { path: '/student/training-material', title: 'Training Materials',  icon:'library_books', class: '' },
  
 ];
 

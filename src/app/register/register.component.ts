@@ -4,6 +4,7 @@ import { HttpService } from '../http.service';
 import { Headers } from '@angular/http';
 import { Constants } from '../Constants';
 import { Router } from '@angular/router';
+import { Ng4LoadingSpinnerService } from '../../../node_modules/ng4-loading-spinner';
 
 @Component({
   selector: 'app-register',
@@ -26,7 +27,9 @@ export class RegisterComponent implements OnInit {
   pass: string;
   cpass: string;
   return_message;
-  constructor(private httpService: HttpService , private router:Router ) {}
+  constructor(private httpService: HttpService , 
+              private router:Router,
+              private spinnerService : Ng4LoadingSpinnerService) {}
 
   ngOnInit() {
     this.signUpForm = new FormGroup({
@@ -74,6 +77,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
+    this.spinnerService.show();
     this.name = this.signUpForm.value.name;
     this.empCode = this.signUpForm.value.empCode;
     this.email = this.signUpForm.value.email;
@@ -90,6 +94,7 @@ export class RegisterComponent implements OnInit {
       .subscribe(data => {
         this.return_message=data.toString()
         console.log(this.return_message);
+        this.spinnerService.hide();
         this.router.navigate(['/login']);
       });
 

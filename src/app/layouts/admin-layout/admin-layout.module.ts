@@ -6,6 +6,7 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { AssessmentComponent } from '../../assessment/assessment.component';
+import { TrainingMaterialComponent } from '../../training-material/training-material.component';
 
 
 import {MatDialogModule} from '@angular/material';
@@ -36,6 +37,7 @@ import {
     DashboardComponent,
     UserProfileComponent,
     AssessmentComponent,
+    TrainingMaterialComponent
 
     // DialogOverviewExampleDialog,
   
