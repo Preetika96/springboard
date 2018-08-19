@@ -3,6 +3,7 @@ import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpService } from '../http.service';
 import { Headers } from '@angular/http';
 import { Constants } from '../Constants';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -24,7 +25,8 @@ export class RegisterComponent implements OnInit {
   confirm_password: string;
   pass: string;
   cpass: string;
-  constructor(private httpService: HttpService) {}
+  return_message;
+  constructor(private httpService: HttpService , private router:Router ) {}
 
   ngOnInit() {
     this.signUpForm = new FormGroup({
@@ -86,8 +88,15 @@ export class RegisterComponent implements OnInit {
 
     this.httpService.post_api(Constants.REGISTER, this.signUpForm.value, header)
       .subscribe(data => {
-        console.log(data);
+        this.return_message=data.toString()
+        console.log(this.return_message);
+        this.router.navigate(['/login']);
       });
+
+    // The return messages are:
+    // ["Registered Successfully"]   - if user_details is updated correctly
+    // ["Registration Failed"]       - if user_Details failed to update the info provided the given empcode is valid
+    // ["Employee Code not present"] - if employee code provided is incorrect
     this.signUpForm.reset();
   }
 }

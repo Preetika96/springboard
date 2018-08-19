@@ -14,7 +14,6 @@
             
             if(Dbconfig::$conn === null)
             {
-                echo "Establshing connection";
                 Dbconfig::$conn = new mysqli(constant("SERVERNAME"), constant("USERNAME"), constant("PASSWORD"), constant("DBNAME"));
                 // Check connection
                 if (Dbconfig::$conn->connect_error) {

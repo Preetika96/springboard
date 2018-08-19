@@ -8,7 +8,9 @@ export class Constants {
   static REGISTER       = Constants.BASE_URL + '/register.php';
   static LOGIN          = Constants.BASE_URL + '/login.php';
   static ADD_MATERIAL   = Constants.BASE_URL + '/materialSave.php';
-  static ADD_SUBJECT    = Constants.BASE_URL + '/addSubject.php';
+  static ADD_SUBJECT    = Constants.BASE_URL + '/addSubject.php';  
+  static DASHBOARD      = Constants.BASE_URL + "/dashboard.php";
+  static USER_PROFILE   = Constants.BASE_URL + "/user_profile.php";
 }
 
 
