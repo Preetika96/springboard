@@ -12,14 +12,34 @@ export class AddAssessmentComponent implements OnInit {
   @ViewChild('f')
   loginForm: NgForm;
   filedata: string | any = '';
-  subjects = ['html', 'css'];
+  subjects: string [];
   subject = '';
   selectedFile = '';
+  obj: any;
+  response;
   constructor(  private httpService: HttpService,
                 private spinnerService: Ng4LoadingSpinnerService
              ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // Fetch SUbjects List from DB
+    this.spinnerService.show();
+    this.obj =
+    {
+      'req_type': 1
+    }
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+
+    // Create an Object of Header specifying the content type and pass it to the method
+  this.httpService.post_api(Constants.FETCH_STOCK_DATA, JSON.stringify(this.obj), headers)
+    .subscribe(data => {
+      this.response = data;
+      this.subjects = this.response._body.split(',');
+      this.subjects.pop();
+      this.spinnerService.hide();
+    });
+  }
 
   fileEvent(e) {
     this.filedata = e.target.files[0];
@@ -54,7 +74,6 @@ export class AddAssessmentComponent implements OnInit {
       this.httpService.cpost_api(Constants.UPLOAD_SCORES, _formData, 'text')
         .subscribe(data => {
           this.spinnerService.hide();
-          alert(data);
         });
     }
   }

@@ -16,7 +16,6 @@ export class AddSubjectComponent implements OnInit {
   type = '<click>';
   types = ['Client Side', 'Server side', 'Database'];
   subjects: { name: string; type: string }[] = [];
-  output: JSON;
   obj: any;
 
   constructor(  private router: Router, 
