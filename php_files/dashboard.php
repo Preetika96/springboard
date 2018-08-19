@@ -3,129 +3,183 @@
     header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
 
     include 'Dbconfig.php';
-    Dbconfig::Init();
-    $received=json_decode(file_get_contents('php://input'));
-    $empcode="1234";
+    
+    $received=json_decode(file_get_contents('php://input', true));
+    $request_type=$received->req_type;
+    $empcode=$received->empcode;
 
-//Training
-    $retrieved_training="select * from training_material limit 4";
-    $return=Dbconfig::ReadTable($retrieved_training);
-    $outp = "";
-    if($return->num_rows > 0){
-        while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-            if ($outp != "") {$outp .= ",";}
-            $outp .= '{"subject_id":"'  . $row["subject_id"] . '",';
-            $outp .= '"file_path":"'   . $row["file_path"]        . '"}';
+    //Switch case
+    switch($request_type)
+    {
+        case "1": 
+        {
+            $result="";    
+            //Training Material
+            Dbconfig::Init();
+            $query="select * from training_material limit 4";
+            $return=Dbconfig::ReadTable($query);
+            if ($return->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                    if ($result != "") {$result .= ",";}
+                    $result .= '{"subject_id":"'  . $row["subject_id"] . '",';
+                    $result .= '"file_path":"'   . $row["file_path"]        . '"}';
+                }
+                $result ='{"material_records":['.$result.']},';
+                echo $result;
+            }
+            Dbconfig::CloseConnection();
+            break;
         }
-        $outp ='{"material_records":['.$outp.']},';
+
+        case "2": 
+        {
+            $result="";    
+            //Assessment
+            Dbconfig::Init();
+            $query="select subject_name,percent from assessment_table,subject_list where empcode=$empcode and subject_list.subject_id=assessment_table.subject_id limit 4";
+            $return=Dbconfig::ReadTable($query);
+            if ($return->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                    if ($result != "") {$result .= ",";}
+                    $result .= '{"subject_name":"'  . $row["subject_name"] . '",';
+                    $result .= '"percent":"'   . $row["percent"]        . '"}';
+                }
+                $result ='{"assessment_records":['.$result.']},';
+                echo $result;
+            }
+            Dbconfig::CloseConnection();
+            break;
+        }
+
+        case "3": 
+        {
+            $result="";    
+            //Front
+            Dbconfig::Init();
+            $query="select sum(percent) from assessment_table,subject_list where empcode=$empcode and subject_list.subject_id=assessment_table.subject_id and subject_list.category='Client Side'";
+            $return=Dbconfig::ReadTable($query);
+            if ($return->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                    if ($result != "") {$result .= ",";}
+                        $result .= '{"percent":"'  . $row["percent"] . '"}';
+                    }
+                             
+                $result ='{"percent":['.$result.']},';
+                echo $result;
+            }
+            Dbconfig::CloseConnection();
+            break;
+        }
+
+        case "4": 
+        {
+            $result="";    
+            //Back
+            Dbconfig::Init();
+            $query="select sum(percent) from assessment_table,subject_list where empcode=$empcode and subject_list.subject_id=assessment_table.subject_id and subject_list.category='Server Side'";
+            $return=Dbconfig::ReadTable($query);
+            if ($return->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                    if ($result != "") {$result .= ",";}
+                        $result .= '{"percent":"'  . $row["percent"] . '"}';
+                    }
+                             
+                $result ='{"percent":['.$result.']},';
+                echo $result;
+            }
+            Dbconfig::CloseConnection();
+            break;
+        }
+
+        case "5": 
+        {
+            $result="";    
+            //Back
+            Dbconfig::Init();
+            $query="select sum(percent) from assessment_table,subject_list where empcode=$empcode and subject_list.subject_id=assessment_table.subject_id and subject_list.category='Database'";
+            $return=Dbconfig::ReadTable($query);
+            if ($return->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                    if ($result != "") {$result .= ",";}
+                        $result .= '{"percent":"'  . $row["percent"] . '"}';
+                    }
+                             
+                $result ='{"percent":['.$result.']},';
+                echo $result;
+            }
+            Dbconfig::CloseConnection();
+            break;
+        }
+
+        case "6": 
+        {
+            $result="";    
+            //Back
+            Dbconfig::Init();
+            $query="select sum(percent) from assessment_table,subject_list where subject_list.subject_id=assessment_table.subject_id and subject_list.category='Client Side'";
+            $return=Dbconfig::ReadTable($query);
+            if ($return->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                    if ($result != "") {$result .= ",";}
+                        $result .= '{"percent":"'  . $row["percent"] . '"}';
+                    }
+                             
+                $result ='{"percent":['.$result.']},';
+                echo $result;
+            }
+            Dbconfig::CloseConnection();
+            break;
+        }
+
+
+        case "7": 
+        {
+            $result="";    
+            //Back
+            Dbconfig::Init();
+            $query="select sum(percent) from assessment_table,subject_list where subject_list.subject_id=assessment_table.subject_id and subject_list.category='Server Side'";
+            $return=Dbconfig::ReadTable($query);
+            if ($return->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                    if ($result != "") {$result .= ",";}
+                        $result .= '{"percent":"'  . $row["percent"] . '"}';
+                    }
+                             
+                $result ='{"percent":['.$result.']},';
+                echo $result;
+            }
+            Dbconfig::CloseConnection();
+            break;
+        }
+            
+        case "8": 
+        {
+            $result="";    
+            //Back
+            Dbconfig::Init();
+            $query="select sum(percent) from assessment_table,subject_list where subject_list.subject_id=assessment_table.subject_id and subject_list.category='Database'";
+            $return=Dbconfig::ReadTable($query);
+            if ($return->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                    if ($result != "") {$result .= ",";}
+                        $result .= '{"percent":"'  . $row["percent"] . '"}';
+                    }
+                             
+                $result ='{"percent":['.$result.']},';
+                echo $result;
+            }
+            Dbconfig::CloseConnection();
+            break;
+        
+        }
     }
-        else{
-            echo "User not found";
-        }
-    //Assessment 
-    $retrieved_assess="select subject_name,percent from assessment_table,subject_list where empcode=$empcode and subject_list.subject_id=assessment_table.subject_id limit 4";
-    $return=Dbconfig::ReadTable($retrieved_assess);
-        $outp = "";
-        if($return->num_rows > 0){
-            while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                if ($outp != "") {$outp .= ",";}
-                $outp .= '{"subject_name":"'  . $row["subject_name"] . '",';
-                $outp .= '"percent":"'   . $row["percent"]        . '"}';
-            }
-            $outp .='{"assessment_records":['.$outp.']}';
-        }
-            else{
-                echo "User not found";
-            }
-    //Front
-  $retrieved_front="select sum(percent) from assessment_table,subject_list where empcode=$empcode and subject_list.subject_id=assessment_table.subject_id and subject_list.category='Client Side'";
-    $return=Dbconfig::ReadTable($retrieved_front);
-        $outp = "";
-        if($return->num_rows > 0){
-            while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                if ($outp != "") {$outp .= ",";}
-                $outp .= '{"percent":"'  . $row["subject_name"] . '"}';
-            }
-         
-        }
-            else{
-                echo "User not found";
-            }
-//Back
-$retrieved_back="select sum(percent) from assessment_table,subject_list where empcode=$empcode and subject_list.subject_id=assessment_table.subject_id and subject_list.category='Server Side'";
-    $return=Dbconfig::ReadTable($retrieved_back);
-        $outp = "";
-        if($return->num_rows > 0){
-            while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                if ($outp != "") {$outp .= ",";}
-                $outp .= '{"percent":"'  . $row["subject_name"] . '"}';
-            }
-         
-        }
-            else{
-                echo "User not found";
-            }
-//Database
-$retrieved_data="select sum(percent) from assessment_table,subject_list where empcode=$empcode and subject_list.subject_id=assessment_table.subject_id and subject_list.category='Database'";
-    $return=Dbconfig::ReadTable($retrieved_back);
-        $outp = "";
-        if($return->num_rows > 0){
-            while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                if ($outp != "") {$outp .= ",";}
-                $outp .= '{"percent":"'  . $row["subject_name"] . '"}';
-            }
-         
-        }
-            else{
-                echo "User not found";
-            }
-
-//Front-Admin
-  $retrieved_front="select sum(percent) from assessment_table,subject_list where subject_list.subject_id=assessment_table.subject_id and subject_list.category='Client Side'";
-    $return=Dbconfig::ReadTable($retrieved_front);
-        $outp = "";
-        if($return->num_rows > 0){
-            while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                if ($outp != "") {$outp .= ",";}
-                $outp .= '{"percent":"'  . $row["subject_name"] . '"}';
-            }
-         
-        }
-            else{
-                echo "User not found";
-            }
-
-//Back-Admin
-  $retrieved_front="select sum(percent) from assessment_table,subject_list where subject_list.subject_id=assessment_table.subject_id and subject_list.category='Server Side'";
-    $return=Dbconfig::ReadTable($retrieved_front);
-        $outp = "";
-        if($return->num_rows > 0){
-            while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                if ($outp != "") {$outp .= ",";}
-                $outp .= '{"percent":"'  . $row["subject_name"] . '"}';
-            }
-         
-        }
-            else{
-                echo "User not found";
-            }
-
-//Database-Admin
-  $retrieved_front="select sum(percent) from assessment_table,subject_list where subject_list.subject_id=assessment_table.subject_id and subject_list.category='Server Side'";
-    $return=Dbconfig::ReadTable($retrieved_front);
-        $outp = "";
-        if($return->num_rows > 0){
-            while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                if ($outp != "") {$outp .= ",";}
-                $outp .= '{"percent":"'  . $row["subject_name"] . '"}';
-            }
-         
-        }
-            else{
-                echo "User not found";
-            }
-
-
-
 
 ?>
