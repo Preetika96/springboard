@@ -26,12 +26,12 @@ import { TrainerLayoutComponent } from './layouts/trainer-layout/trainer-layout.
 import { FrontComponent } from './front/front.component';
 import { DevelopersComponent } from './developers/developers.component';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
-
+import { SessionService } from './session.service';
 
 
 const appRoutes: Routes = [
   {path : '',component:FrontComponent,children:[
-    {path : '' , component : RegisterComponent},
+    {path : '' , component : LoginComponent},
     {path : 'register', component : RegisterComponent},
     {path : 'login', component : LoginComponent},
     {path : 'developer', component :DevelopersComponent }
@@ -80,7 +80,7 @@ const appRoutes: Routes = [
 
   ],  
 
-  providers: [HttpService],
+  providers: [HttpService,SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

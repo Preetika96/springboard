@@ -61,6 +61,7 @@ export const TrainerLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
+    {path : '' ,component: TrainerDashboardComponent },
      { path: 'dashboard',      component: TrainerDashboardComponent },
     { path: 'user-profile',   component: TrainerUserProfileComponent },
     { path: 'add-materials',   component: AddMaterialsComponent },

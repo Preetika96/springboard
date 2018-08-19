@@ -91,47 +91,17 @@
                           <div class="tab-pane active" id="profile">
                               <table class="table">
                                   <tbody>
-                                      <tr>
+                                      <tr *ngFor="let material of data_body">
   
-                                          <td>MongoDB Materials</td>
+                                          <td>{{material.subject_id}}</td>
                                           <td class="td-actions text-right">
-                                              <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-success btn-link btn-sm btn-just-icon">
-                                                  <i class="material-icons">get_app</i>
+                                              <button mat-raised-button type="button" matTooltip="Download" [matTooltipPosition]="'above'" class="btn btn-success btn-link btn-sm btn-just-icon">
+                                                <a href="C:\xampp\htdocs\php_files\save.php"> <i class="material-icons">get_app</i></a> 
                                               </button>
 
                                           </td>
                                       </tr>
-                                      <tr>
-
-                                          <td>Bootstrap</td>
-                                          <td class="td-actions text-right">
-                                              <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-success btn-link btn-sm btn-just-icon">
-                                                  <i class="material-icons">get_app</i>
-                                              </button>
-
-                                          </td>
-                                      </tr>
-                                      <tr>
- 
-                                          <td>ES6, TS and Angular Materials
-                                          </td>
-                                          <td class="td-actions text-right">
-                                              <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-success btn-link btn-sm btn-just-icon">
-                                                  <i class="material-icons">get_app</i>
-                                              </button>
-
-                                          </td>
-                                      </tr>
-                                      <tr>
-    
-                                          <td>HTML Materials</td>
-                                          <td class="td-actions text-right">
-                                              <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-success btn-link btn-sm btn-just-icon">
-                                                  <i class="material-icons">get_app</i>
-                                              </button>
-
-                                          </td>
-                                      </tr>
+                                      
                                   </tbody>
                               </table>
                           </div>

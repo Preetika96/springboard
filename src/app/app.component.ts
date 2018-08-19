@@ -1,5 +1,6 @@
-import { Component} from '@angular/core';
+import { Component, HostListener} from '@angular/core';
 import { $ } from '../../node_modules/protractor';
+import { SessionService } from './session.service';
 
 
 @Component({
@@ -9,5 +10,11 @@ import { $ } from '../../node_modules/protractor';
 })
 export class AppComponent {
   title = 'springBoard';
-  template = `<img src="../assets/Infinity loading.gif" />`
+
+  constructor(private Session:SessionService) {}
+
+  @HostListener('window:beforeunload',['$event'])
+  Clear_Session(){
+    this.Session.unsetSession();
+  }
 }

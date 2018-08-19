@@ -5,6 +5,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
+import { SessionService } from '../../session.service';
 
 @Component({
   selector: 'app-admin-layout',
@@ -16,9 +17,18 @@ export class AdminLayoutComponent implements OnInit {
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
 
-  constructor( public location: Location, private router: Router) {}
+  login_state;
+
+  constructor( public location: Location, private router: Router , private Session:SessionService) {}
 
   ngOnInit() {
+
+    this.login_state = this.Session.getloginState();
+
+    if(this.login_state===false){
+        this.router.navigate(['/login']);
+    }
+    else{
       const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
       if (isWindows && !document.getElementsByTagName('body')[0].classList.contains('sidebar-mini')) {
@@ -54,6 +64,7 @@ export class AdminLayoutComponent implements OnInit {
           let ps = new PerfectScrollbar(elemMainPanel);
           ps = new PerfectScrollbar(elemSidebar);
       }
+    }
   }
   ngAfterViewInit() {
       this.runOnRouteChange();
