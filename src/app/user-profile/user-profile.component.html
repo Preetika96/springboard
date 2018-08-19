@@ -11,22 +11,22 @@
                   </div>
                   <div class="card-body">
                       <h6 class="card-category text-gray">Associate Software Engineer</h6>
-                      <h4 class="card-title">Alec Thompson</h4>
+                      <h4 class="card-title">{{empname}}</h4>
                       
                       <p class="card-description">
-                          Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                        {{records.description}}
                       </p>
                      
                      
                        <h5  class="card-title">Employee Code</h5>
-                       <p class="card-description">52498</p> 
+                       <p class="card-description"> {{empcode}}</p> 
                     
                      
                         <h5 class="card-title">Contact</h5>
-                        <p class="card-description">98763680038</p>   
+                        <p class="card-description"> {{records.contact}}</p>   
                      
                             <h5 class="card-title">Email ID</h5>
-                            <p class="card-description">preetika96@gmail.com</p>   
+                            <p class="card-description"> {{records.email}}</p>   
                         
    
                  
@@ -59,50 +59,21 @@
                             </div>
                         </div> -->
                         <div class="row">
-                            <div class="col-md-6">
-                              <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Fist Name" type="text">
-                              </mat-form-field>
-                            </div>
-                            <div class="col-md-6">
-                              <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Last Name" type="text">
-                              </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-12">
                               <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Adress" type="text">
+                                <input matInput placeholder="Full Name" value={{empname}} type="text">
                               </mat-form-field>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                              <mat-form-field class="example-full-width">
-                                <input matInput placeholder="City" type="text">
-                              </mat-form-field>
-                            </div>
-                            <div class="col-md-4">
-                              <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Country" type="text">
-                              </mat-form-field>
-                            </div>
-                            <div class="col-md-4">
-                              <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Postal Code" type="text">
-                              </mat-form-field>
-                            </div>
-                        </div>
+                        </div>  
                         <div class="row">
                                 <div class="col-md-6">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Contact" type="text">
+                                    <input matInput placeholder="Contact" value={{records.contact}} type="text">
                                   </mat-form-field>
                                 </div>
                                 <div class="col-md-6">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Email ID" type="text">
+                                    <input matInput placeholder="Email ID" value={{records.email}} type="email">
                                   </mat-form-field>
                                 </div>
                             </div>
@@ -110,15 +81,9 @@
                             <div class="col-md-12">
                               <label>About Me</label>
                               <mat-form-field class="example-full-width">
-                                 <textarea matInput placeholder="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."></textarea>
+                                 <textarea matInput  value={{records.description}} placeholder="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."></textarea>
                                </mat-form-field>
-                                <!-- <div class="form-group">
-
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                        <textarea class="form-control" rows="5"></textarea>
-                                    </div>
-                                </div> -->
+                                
                             </div>
                         </div>
                 

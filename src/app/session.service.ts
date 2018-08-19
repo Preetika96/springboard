@@ -8,7 +8,7 @@ export class SessionService {
 
   private username:string=window.localStorage.getItem('Username')||"User not logged in";
   private employee_id:number;
-  private role;
+  private role:string;
 
   private loggedIn=JSON.parse(window.localStorage.getItem('loginstatus')) ||false; 
 
@@ -18,6 +18,10 @@ export class SessionService {
 
   getUsername(){
     return window.localStorage.getItem('Username');
+  }
+
+  getRole(){
+    return window.localStorage.getItem('Role');
   }
 
   getEmployee_ID(){

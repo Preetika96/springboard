@@ -1,7 +1,6 @@
 <?php
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    header("Access-Control-Allow-Headers: X-Requested-With");
     include 'Dbconfig.php';
     
     $received=json_decode(file_get_contents('php://input', true));
@@ -32,7 +31,7 @@
                     $result="";          
                     //send SUbjects List
                     Dbconfig::Init();
-                    $query="SELECT empname FROM assessment_table";
+                    $query="SELECT distinct(empname) FROM assessment_table";
                     $return=Dbconfig::ReadTable($query);
                     if ($return->num_rows > 0) {
                         // output data of each row
@@ -71,7 +70,8 @@
                     //send SUbjects List
                     Dbconfig::Init();
                     $query="SELECT empcode, empname, percent FROM assessment_table WHERE subject_id = 
-                                                        (SELECT subject_id FROM subject_list WHERE subject_name = '$subject_name')";
+                             (SELECT subject_id FROM subject_list WHERE subject_name = '$subject_name')
+                             ORDER BY percent DESC";
                     $return=Dbconfig::ReadTable($query);
                     if ($return->num_rows > 0) {
                         // output data of each row
@@ -95,7 +95,8 @@
                     $query="SELECT subject_list.subject_name, assessment_table.percent 
                                     FROM subject_list INNER JOIN assessment_table
                                     ON subject_list.subject_id = assessment_table.subject_id 
-                                    AND assessment_table.empname = '$student_name'";
+                                    AND assessment_table.empname = '$student_name'
+                                    ORDER BY assessment_table.percent DESC";
 
                     $return=Dbconfig::ReadTable($query);
                     if ($return->num_rows > 0) {

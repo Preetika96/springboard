@@ -74,7 +74,7 @@ const appRoutes: Routes = [
     AttendanceComponent,
     TrainerLayoutComponent,
     FrontComponent,
-    DevelopersComponent
+    DevelopersComponent   
    
    
 

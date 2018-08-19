@@ -6,7 +6,7 @@ import { Routes,RouterModule } from '@angular/router';
 import { AddMaterialsComponent } from '../../add-materials/add-materials.component';
 
 import { TrainerDashboardComponent } from '../../trainer-dashboard/trainer-dashboard.component';
-import { TrainerUserProfileComponent } from '../../trainer-user-profile/trainer-user-profile.component';
+import { UserProfileComponent } from '../../user-profile/user-profile.component';
 // import { TableListComponent } from '../../table-list/table-list.component';
 // import { IconsComponent } from '../../icons/icons.component';
  import { ShowScoreComponent } from '../../show-score/show-score.component';
@@ -15,7 +15,8 @@ import { AddAssessmentComponent } from '../../add-assessment/add-assessment.comp
 // import { UpgradeComponent } from '../../upgrade/upgrade.component';
  import { ShowByStudentsComponent } from '../../show-by-students/show-by-students.component';
  import { ShowAssessmentListComponent } from '../../show-by-students/show-assessment-list/show-assessment-list.component';
- import { NoneComponentComponent } from '../../none-component/none-component.component';
+ import { NoneComponentComponent } from '../../none-component/none-component.component'; 
+ import { TrainingMaterialComponent } from '../../training-material/training-material.component';
 
 
 export const TrainerLayoutRoutes: Routes = [
@@ -63,8 +64,9 @@ export const TrainerLayoutRoutes: Routes = [
     // }
     {path : '' ,component: TrainerDashboardComponent },
      { path: 'dashboard',      component: TrainerDashboardComponent },
-    { path: 'user-profile',   component: TrainerUserProfileComponent },
+    { path: 'user-profile',   component:  UserProfileComponent },
     { path: 'add-materials',   component: AddMaterialsComponent },
+    { path: 'training-material',   component: TrainingMaterialComponent },
     // { path: 'table-list',     component: TableListComponent },
     
     // { path: 'icons',          component: IconsComponent },

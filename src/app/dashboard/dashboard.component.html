@@ -8,7 +8,7 @@
                           <i class="material-icons">content_copy</i>
                       </div>
                       <p class="card-category">Design</p>
-                      <h3 class="card-title">75
+                      <h3 class="card-title">{{clientsidescore.percent}}
                           <small>%</small>
                       </h3>
                   </div>
@@ -27,7 +27,7 @@
                           <i class="material-icons">store</i>
                       </div>
                       <p class="card-category">Logic & Database</p>
-                      <h3 class="card-title">85
+                      <h3 class="card-title">{{databasescore.percent}}
                         <small>%</small></h3>
                   </div>
                   <div class="card-footer">
@@ -44,7 +44,7 @@
                           <i class="material-icons">info_outline</i>
                       </div>
                       <p class="card-category">Backend</p>
-                      <h3 class="card-title">95
+                      <h3 class="card-title">{{serversidescore.percent}}
                         <small>%</small></h3>
                   </div>
                   <div class="card-footer">
@@ -91,9 +91,10 @@
                           <div class="tab-pane active" id="profile">
                               <table class="table">
                                   <tbody>
-                                      <tr *ngFor="let material of data_body">
+                                      <tr *ngFor="let material of materialrecords">
   
-                                          <td>{{material.subject_id}}</td>
+                                          <td>{{material.subject_name}}</td>
+                                          <td>{{material.file_path}}</td>
                                           <td class="td-actions text-right">
                                               <button mat-raised-button type="button" matTooltip="Download" [matTooltipPosition]="'above'" class="btn btn-success btn-link btn-sm btn-just-icon">
                                                 <a href="C:\xampp\htdocs\php_files\save.php"> <i class="material-icons">get_app</i></a> 
@@ -116,7 +117,7 @@
                 <div class="card-header card-header-tabs card-header-success">
                     <div class="nav-tabs-navigation">
                         <div class="nav-tabs-wrapper">
-                          <h4 class="card-title">Assessment Question Paper</h4>
+                          <h4 class="card-title">Assessment Score Card</h4>
 
                         </div>
                     </div>
@@ -126,51 +127,14 @@
                         <div class="tab-pane active" id="profile">
                             <table class="table">
                                 <tbody>
-                                    <tr>
+                                    <tr *ngFor="let material of materialrecords">
 
-                                        <td>MongoDB Materials</td>
-                                        <td class="td-actions text-right">
-                                            <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-success btn-link btn-sm btn-just-icon">
-                                                <i class="material-icons">get_app</i>
-                                            </button>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>Bootstrap</td>
-                                        <td class="td-actions text-right">
-                                            <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-success btn-link btn-sm btn-just-icon">
-                                                <i class="material-icons">get_app</i>
-                                            </button>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>ES6, TS and Angular Materials
-                                        </td>
-                                        <td class="td-actions text-right">
-                                            <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-success btn-link btn-sm btn-just-icon">
-                                                <i class="material-icons">get_app</i>
-                                            </button>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-  
-                                        <td>HTML Materials</td>
-                                        <td class="td-actions text-right">
-                                            <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-success btn-link btn-sm btn-just-icon">
-                                                <i class="material-icons">get_app</i>
-                                            </button>
-
-                                        </td>
-                                    </tr>
+                                        <td>{{material.subject_name}}</td>
+                                        <td>{{material.file_path}}</td>                                        
+                                    </tr>                                    
                                 </tbody>
                             </table>
                         </div>
-
                     </div>
                 </div>
             </div>
