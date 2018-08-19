@@ -8,7 +8,11 @@
   height: 63px;
   border-bottom: solid 1px #ececec;
 }
-
+.spinner img{
+  margin-left: 40%;
+    width: 20%;
+    margin-top: 15%;
+}
 #header .wrap {
   position: relative;
 }
