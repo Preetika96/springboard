@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       ele.parentElement.parentElement.classList.remove('circle-login');
     },1000);
 
-    const header = new Headers({ 'Content-Type': 'text-plain' });
+    const header = new Headers({ 'Content-Type': 'text/plain' });
     this.httpService.post_api(Constants.LOGIN, this.loginForm.value, header)
       .subscribe(data => {
         this.data_body=data;
