@@ -37,12 +37,12 @@ export class LoginComponent implements OnInit {
       ele.parentElement.parentElement.classList.remove('circle-login');
     },1000);
 
-    const header = new Headers({ 'Content-Type': 'text-plain' });
+    const header = new Headers({ 'Content-Type': 'text/plain' });
     this.httpService.post_api(Constants.LOGIN, this.loginForm.value, header)
       .subscribe(data => {
         this.data_body=data;
         this.data_body=JSON.parse(this.data_body._body)['result'][0];
-        // console.log(this.data_body);
+        console.log(this.data_body);
         this.Session.setSession(this.data_body['name'],this.data_body['empcode'],this.data_body['role']);
         this.Redirect();
       },

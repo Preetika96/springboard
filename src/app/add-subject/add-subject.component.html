@@ -10,9 +10,10 @@
                   </div>
                   <div class ="form-group">
                       <div class="dropdown"style ="margin-left: 0em;">
-                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" >                          
-                          <span id = "sub_type" style = "display : flex;color:red;margin-left:0.4em">Selected Category: {{type}}</span>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" >    
+                            Category
                         </button>
+                        <span id = "sub_type" style = "display : none;color:red;margin-left:0.4em">Selected Category: {{type}}</span>
                        <ul class = "dropdown-menu" role = "menu">
                          <li role = "presentaion" *ngFor= "let type of types">
                            <a role = "menuitem" (click) = "showType(type)" >{{type}}</a>

@@ -29,6 +29,7 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { SessionService } from './session.service';
 
 
+
 const appRoutes: Routes = [
   {path : '',component:FrontComponent,children:[
     {path : '' , component : LoginComponent},
@@ -74,7 +75,8 @@ const appRoutes: Routes = [
     AttendanceComponent,
     TrainerLayoutComponent,
     FrontComponent,
-    DevelopersComponent
+    DevelopersComponent,
+  
    
    
 
