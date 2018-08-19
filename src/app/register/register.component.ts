@@ -84,7 +84,7 @@ export class RegisterComponent implements OnInit {
     this.role = this.signUpForm.value.role;
 
     // Create an Object of Header specifying the content type and pass it to the method
-    const header = new Headers({ 'Content-Type': 'text-plain' });
+    const header = new Headers({ 'Content-Type': 'text/plain' });
 
     this.httpService.post_api(Constants.REGISTER, this.signUpForm.value, header)
       .subscribe(data => {

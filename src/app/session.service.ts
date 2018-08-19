@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class SessionService {
 
   
-  constructor() { }
+  
 
   private username:string=window.localStorage.getItem('Username')||"User not logged in";
   private employee_id:number;
@@ -12,6 +12,7 @@ export class SessionService {
 
   private loggedIn=JSON.parse(window.localStorage.getItem('loginstatus')) ||false; 
 
+  constructor() { }
   getloginState(){
     return JSON.parse(window.localStorage.getItem('loginstatus')) || this.loggedIn;
   }

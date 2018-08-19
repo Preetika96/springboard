@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { AssessmentComponent } from '../../assessment/assessment.component';
-
+import { TrainingMaterialsComponent} from '../../training-materials/training-materials.component'
 export const AdminLayoutRoutes: Routes = [
     // {
     //   path: '',
@@ -52,5 +52,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'assessment',     component: AssessmentComponent },
 
-    
+      { path: 'training-materials',     component: TrainingMaterialsComponent },
 ];
