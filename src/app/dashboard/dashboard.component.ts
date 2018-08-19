@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
   client_side_score;
   server_side_score;
   database_score;
+  response;
 
   constructor(public dialog: MatDialog, private http: HttpService ,private Session:SessionService) {}
   ngOnInit() {
@@ -34,17 +35,10 @@ export class DashboardComponent implements OnInit {
     headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 
     // Create an Object of Header specifying the content type and pass it to the method
-    this.http.post_api(Constants.DASHBOARD, JSON.stringify(this.obj), headers)
+    this.http.post_api(Constants.FETCH_STOCK_DATA, JSON.stringify(this.obj), headers)
       .subscribe(data => {
         this.response = data;
-        // console.log(this.response)
-
-        this.training_materials = JSON.parse(this.response._body.split("=")[0])['materialrecords'];
-        // this.assessment_materials = JSON.parse(this.response._body.split("=")[1])['assessmentrecords'];
-        // this.client_side_score = JSON.parse(this.response._body.split("=")[2])['clientsidescore'];
-        console.log(this.response);
-        
-     
+        this.response = JSON.parse(this.response._body)['material_records'];
 
       });
 
