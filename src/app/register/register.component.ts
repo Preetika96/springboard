@@ -5,6 +5,7 @@ import { Headers } from '@angular/http';
 import { Constants } from '../Constants';
 import { Router } from '@angular/router';
 import { Ng4LoadingSpinnerService } from '../../../node_modules/ng4-loading-spinner';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -92,11 +93,13 @@ export class RegisterComponent implements OnInit {
 
     this.httpService.post_api(Constants.REGISTER, this.signUpForm.value, header)
       .subscribe(data => {
-        this.return_message=data.toString()
-        console.log(data);
-        this.spinnerService.hide();
-        this.return_message = data.toString()
+        this.return_message=data;
+        this.return_message=JSON.parse(this.return_message._body)['result'].toString();
         console.log(this.return_message);
+        this.spinnerService.hide();
+        // this.return_message = data.toString();
+        this.show_alert();
+        // console.log(this.return_message);
         this.router.navigate(['/login']);
       });
 
@@ -106,4 +109,35 @@ export class RegisterComponent implements OnInit {
     // ["Employee Code not present"] - if employee code provided is incorrect
     this.signUpForm.reset();
   }
+
+  // Alert  Modal *******If this alert does not work try running the following command inside the project folder. ********
+  // *********** npm install --save sweetalert2 ***********
+  show_alert(){
+    if(this.return_message==="Registered Successfully"){
+      Swal({
+        title:"Successful",
+        type: 'success',
+        text: 'Registered Successfully',
+        showConfirmButton: false,
+        timer: 2000
+      })
+    }
+    else if(this.return_message==="Employee Code not present")
+    Swal({
+        title:"Invalid",
+        type: 'error',
+        text: 'Invalid Employee Code',
+        showConfirmButton: false,
+        timer: 2000
+    })
+    else if(this.return_message==="Registration Failed")
+    Swal({
+        title:"Error",
+        type: 'warning',
+        text: 'Registration Failed',
+        showConfirmButton: false,
+        timer: 2000
+    })
+  }
+
 }

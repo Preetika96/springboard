@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Headers } from '@angular/http';
 
+
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
