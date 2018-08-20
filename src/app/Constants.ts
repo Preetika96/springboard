@@ -12,6 +12,7 @@ export class Constants {
   static DASHBOARD      = Constants.BASE_URL + "/dashboard.php";
   static USER_PROFILE   = Constants.BASE_URL + "/user-profile.php";  
   static FETCH_STOCK_DATA = Constants.BASE_URL + '/fetchStockData.php';
+  static UPDATE_PROFILE = Constants.BASE_URL + '/updateProfile.php';
 }
 
 
