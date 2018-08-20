@@ -1,4 +1,4 @@
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { Constants } from '../Constants';
@@ -17,7 +17,21 @@ export class ShowByStudentsComponent implements OnInit {
   constructor(  private router: Router,
                 private route: ActivatedRoute,
                 private httpService: HttpService,
-                private spinnerService: Ng4LoadingSpinnerService) {}
+                private spinnerService: Ng4LoadingSpinnerService) {
+
+                  this.router.routeReuseStrategy.shouldReuseRoute = function(){
+                    return false;
+                 }
+            
+                 this.router.events.subscribe((evt) => {
+                    if (evt instanceof NavigationEnd) {
+                       // trick the Router into believing it's last link wasn't previously loaded
+                       this.router.navigated = false;
+                       // if you need to scroll back to top, here is the right place
+                       window.scrollTo(0, 0);
+                    }
+                });
+                }
 
   ngOnInit() {
     // Fetch SUbjects List from DB
@@ -40,6 +54,7 @@ export class ShowByStudentsComponent implements OnInit {
   }
 
   showAssessment(student){
+    //this.router.navigate(['../'], {relativeTo : this.route} );
     this.router.navigate(['assessment-list'], {relativeTo : this.route, queryParams : {name : student} } );
   }
 }

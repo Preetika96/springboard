@@ -29,7 +29,7 @@ export class ShowAssessmentListComponent implements OnInit {
         this.name = qParams['name'];
       }
     );
-
+    
     // Fetch Students List from DB
     this.spinnerService.show();
     this.obj = {
