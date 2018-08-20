@@ -3,6 +3,8 @@ import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
 import { SessionService } from '../../session.service';
+import Swal from 'sweetalert2';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navbar',
@@ -128,7 +130,18 @@ export class NavbarComponent implements OnInit {
       return 'Dashboard';
     }
 
-    destroy_Session(){
-        this.Session.unsetSession();
+    destroy_session(){
+        Swal({
+            title: 'Are you sure?',
+            text: "You'll be logged off",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes'
+          }).then((result) => {
+                this.Session.unsetSession();
+                this.router.navigate(["login"]);
+            });
     }
 }
