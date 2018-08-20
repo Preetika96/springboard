@@ -34,6 +34,7 @@ export class TrainingMaterialComponent implements OnInit {
       .subscribe(data => {
         this.response = data;
         this.materialrecords = JSON.parse(this.response._body)['materialrecords'];
+        console.log(this.materialrecords);
         this.spinnerServ.hide();
       });
 

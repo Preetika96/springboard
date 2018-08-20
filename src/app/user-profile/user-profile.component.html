@@ -41,43 +41,39 @@
                     </div>
                     <div class="card-body">
                         <form [formGroup]='updateProfileForm' (ngSubmit)="onSubmit()">
-                                <div class="form-group" style="display: none;">
+                                <div style="display: none;">
                                         <mat-form-field class="example-full-width">
-                                            <input matInput placeholder="Full Name" class="form-control" value = {{code}} type="text" formControlName="empcode">
+                                            <input matInput class="form-control" placeholder="code" value = {{empcode}} type=number formControlName="empcode" id = 'empcode' name='empcode'>
                                         </mat-form-field>
         
                                     </div>
-                            <div class="form-group">
+                            <div>
                                 <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Full Name" class="form-control" value = {{name}} type="text" formControlName="empname">
+                                    <input matInput class="form-control" placeholder="Full Name" value = {{empname}} type="text" formControlName="empname" id = 'empname' name='empname'>
                                 </mat-form-field>
 
                             </div>
-                            <div class="form-group">
+                            <div>
                                 <mat-form-field class="example-full-width">
-                                    <input matInput class="form-control" placeholder="Contact" value = {{contact}} type="text" formControlName="contact"> 
+                                    <input matInput class="form-control" placeholder="Contact" value = {{records.contact}} type="number" formControlName="contact" id = 'contact' name='contact'> 
                                 </mat-form-field>
 
                             </div>
-                            <div class="form-group">
+                            <div>
                                 <mat-form-field class="example-full-width">
-                                    <input matInput class="form-control" placeholder="Email ID" value = {{email}} type="text" formControlName="email">
+                                    <input matInput class="form-control" placeholder="Email ID" value = {{records.email}} type="text" formControlName="email" id = 'email' name='email'>
                                 </mat-form-field>
 
                             </div>
-                            <div class="form-group">
+                            <div>
                                 <mat-form-field class="example-full-width">
-                                    <input matInput class="form-control"   value = {{desc}} type="text" formControlName="description">
+                                    <input matInput class="form-control" value = {{records.description}} type="text" formControlName="description" id = 'description' name='description'>
                                 </mat-form-field>
 
                             </div>
                             <button mat-raised-button type="submit" class="btn btn-success pull-right">Update Profile</button>
                             <div class="clearfix"></div>
                         </form>
-
-
-
-
                     </div>
                 </div>
             </div>

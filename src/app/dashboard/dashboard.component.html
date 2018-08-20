@@ -61,8 +61,8 @@
                       <div class="card-icon">
                           <i class="fa fa-twitter"></i>
                       </div>
-                      <p class="card-category">Operations</p>
-                      <h3 class="card-title">80
+                      <p class="card-category">Pass Percentage</p>
+                      <h3 class="card-title">{{passpercentage.percent}}
                         <small>%</small></h3>
                   </div>
                   <div class="card-footer">
@@ -97,7 +97,7 @@
                                           <td>{{material.file_path}}</td>
                                           <td class="td-actions text-right">
                                               <button mat-raised-button type="button" matTooltip="Download" [matTooltipPosition]="'above'" class="btn btn-success btn-link btn-sm btn-just-icon">
-                                                <a  href="/assets/icompanies.php" download> <i class="material-icons">get_app</i></a> 
+                                                <a  href={{material.file_path}} download> <i class="material-icons">get_app</i></a> 
                                               </button>
 
                                           </td>
