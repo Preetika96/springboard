@@ -92,6 +92,8 @@ export class RegisterComponent implements OnInit {
 
     this.httpService.post_api(Constants.REGISTER, this.signUpForm.value, header)
       .subscribe(data => {
+        this.return_message=data.toString()
+        console.log(data);
         this.spinnerService.hide();
         this.return_message = data.toString()
         console.log(this.return_message);

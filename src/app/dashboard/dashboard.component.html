@@ -97,7 +97,7 @@
                                           <td>{{material.file_path}}</td>
                                           <td class="td-actions text-right">
                                               <button mat-raised-button type="button" matTooltip="Download" [matTooltipPosition]="'above'" class="btn btn-success btn-link btn-sm btn-just-icon">
-                                                <a href="C:\xampp\htdocs\php_files\save.php"> <i class="material-icons">get_app</i></a> 
+                                                <a  href="/assets/icompanies.php" download> <i class="material-icons">get_app</i></a> 
                                               </button>
 
                                           </td>
@@ -127,10 +127,10 @@
                         <div class="tab-pane active" id="profile">
                             <table class="table">
                                 <tbody>
-                                    <tr *ngFor="let material of materialrecords">
+                                    <tr *ngFor="let material of assessmentrecords">
 
                                         <td>{{material.subject_name}}</td>
-                                        <td>{{material.file_path}}</td>                                        
+                                        <td>{{material.percent}}</td>                                        
                                     </tr>                                    
                                 </tbody>
                             </table>

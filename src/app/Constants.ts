@@ -1,6 +1,6 @@
 export class Constants {
 
-  static BASE_URL = 'http://localhost:80/php_files';
+  static BASE_URL = 'http://localhost/php_files';
 
   static UPLOAD_FILE    = Constants.BASE_URL + '/save.php';
   static UPLOAD_SCORES  = Constants.BASE_URL + '/scoresSave.php';
