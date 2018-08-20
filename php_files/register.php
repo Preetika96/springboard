@@ -39,15 +39,17 @@ $fetch_query="select empcode from user_details where empcode=$empCode";
 
     $status=Dbconfig::UpdateTable($result);    
     if($status==="updated"){
-       echo "Registered Successfully";
+        echo '{"result":' . '"Registered Successfully"}';
+    //    echo "Registered Successfully";
     }
     else{
-       echo "Registration Failed";
+       echo '{"result":' . '"Registration Failed"}';
     }
 }
 else {
     //invalid user
-    echo "Employee Code not present";
+    echo '{"result":' . '"Employee Code not present"}';
+    // echo "Employee Code not present";
 }
 Dbconfig::CloseConnection();
 ?>
