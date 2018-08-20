@@ -26,7 +26,10 @@ const routes: Routes =[
     loadChildren: './layouts/trainer-layout/trainer-layout.module#TrainerLayoutModule'
 },
 
-]}
+
+]},
+
+
 
 
     // { path: 'dashboard',      component: DashboardComponent },

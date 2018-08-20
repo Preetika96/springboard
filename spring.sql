@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.1.33, for Win32 (ia32)
+-- MySQL dump 10.13  Distrib 5.5.23, for Win64 (x86)
 --
 -- Host: localhost    Database: springboard
 -- ------------------------------------------------------
--- Server version	5.1.33-community
+-- Server version	5.5.23
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -100,7 +100,7 @@ CREATE TABLE `user_details` (
   `empcode` int(11) DEFAULT NULL,
   `name` varchar(30) DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL,
-  `contact` int(11) DEFAULT NULL,
+  `contact` bigint(20) DEFAULT NULL,
   `role` varchar(30) DEFAULT NULL,
   `gender` varchar(10) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE `user_details` (
 
 LOCK TABLES `user_details` WRITE;
 /*!40000 ALTER TABLE `user_details` DISABLE KEYS */;
-INSERT INTO `user_details` VALUES (123456,'Tester','test@gmail.com',1234567890,'student','male','1bbd886460827015e5d605ed44252251','Tell me about yourself'),(654321,'Nisha Waikar','s@gm.com',1234567890,'trainer','female','1bbd886460827015e5d605ed44252251','Tell me about yourself'),(123321,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52508,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52498,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52538,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52510,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52512,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52506,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself');
+INSERT INTO `user_details` VALUES (123456,'Tester','test@gmail.com',1234567890,'student','male','1bbd886460827015e5d605ed44252251','Tell me about yourself'),(654321,'Nisha Waikar','s@gm.com',1234567890,'trainer','female','1bbd886460827015e5d605ed44252251','Tell me about yourself'),(123321,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52508,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52498,'preetika','preetika96@gmail.com',9756464321,'student','male','1bbd886460827015e5d605ed44252251','Tell me about yourself'),(52538,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52510,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52512,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52506,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(1234567,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(1,'preetika','preetika96@gmail.com',9756464321,'student','female','1bbd886460827015e5d605ed44252251','Tell me about yourself');
 /*!40000 ALTER TABLE `user_details` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -127,4 +127,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-19 20:09:03
+-- Dump completed on 2018-08-20 17:29:08

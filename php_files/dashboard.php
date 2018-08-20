@@ -45,7 +45,7 @@
                     where assessment_table.empcode=$empcode and subject_list.subject_id=assessment_table.subject_id limit 4";
             $return=Dbconfig::ReadTable($query);          
                 // output data of each row
-                while($row = $return->fetch_array(MYSQLI_ASSOC)) {
+                while($row = $return->fetch_assoc()) {
                     if ($result != "") {$result .= ",";}
                     $result .= '{"subject_name":"'  . $row["subject_name"] . '",';
                     $result .= '"percent":"'   . $row["percent"]        . '"}';
@@ -227,6 +227,27 @@
             }
              Dbconfig::CloseConnection();
              break;
+        }
+        case "10": 
+        {
+            $result="";    
+            //Assessment
+            Dbconfig::Init();
+            $query="select subject_list.subject_name,assessment_table.percent from assessment_table,subject_list 
+                    where assessment_table.empcode=$empcode and subject_list.subject_id=assessment_table.subject_id";
+            $return=Dbconfig::ReadTable($query);          
+                // output data of each row
+                while($row = $return->fetch_assoc()) {
+                    if ($result != "") {$result .= ",";}
+                    $result .= '{"subject_name":"'  . $row["subject_name"] . '",';
+                    $result .= '"percent":"'   . $row["percent"]        . '"}';
+                }
+                $result ='{"assessmentrecords":['.$result.']}';
+                echo $result;
+                $return = null;
+            
+            Dbconfig::CloseConnection();
+            break;
         }
     }
 

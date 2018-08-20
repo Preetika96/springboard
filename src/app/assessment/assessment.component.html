@@ -1,99 +1,37 @@
 <div class="main-content">
   <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-12">
-              <div class="card">
-                  <div class="card-header card-header-success">
-                      <h4 class="card-title ">Assessment Marks</h4>
-                      <p class="card-category">SpringBoard Batch 2018</p>
-                  </div>
-                  <div class="card-body">
-                      <div class="table-responsive">
-                          <table class="table">
-                              <thead class=" text-success">
-                                  <th>
-                                      Subject 
-                                  </th>
-                                  <th>
-                                      Percentage
-                                  </th>
-                                  <th>
-                                        Remark
-                                    </th>
-                              </thead>
-                              <tbody>
-                                  <tr>
-                                      <td>
-                                          Dakota Rice
-                                      </td>
-                                      <td>
-                                          89
-                                      </td>
-                                      <td>
-                                          Pass
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          Minerva Hooper
-                                      </td>
-                                      <td>
-                                          100
-                                      </td>
-                                      <td>
-                                          Pass
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          Sage Rodriguez
-                                      </td>
-                                      <td>
-                                          78
-                                      </td>
-                                      <td>
-                                          Pass
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          Philip Chaney
-                                      </td>
-                                      <td>
-                                          80
-                                      </td>
-                                      <td>
-                                          Pass
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          Doris Greene
-                                      </td>
-                                      <td>
-                                          100
-                                      </td>
-                                      <td>
-                                          Pass
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          Mason Porter
-                                      </td>
-                                      <td>
-                                          60
-                                      </td>
-                                      <td>
-                                          Pass
-                                      </td>
-                                  </tr>
-                              </tbody>
-                          </table>
-                      </div>
-                  </div>
-              </div>
-          </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                
+                <div class="card-header card-header-tabs card-header-success">
+                    <div class="nav-tabs-navigation">
+                        <div class="nav-tabs-wrapper">
+                          <h4 class="card-title">Assessment Scores</h4>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="profile">
+                            <table class="table">
+                                <tbody>
+                                    <tr *ngFor="let material of assessmentrecords">
+
+                                        <td>{{material.subject_name}}</td>
+                                        <td>{{material.percent}}</td>
+
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
       </div>
   </div>

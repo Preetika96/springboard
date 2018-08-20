@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
               private http: HttpService, 
               private session : SessionService,
               private spinnerService : Ng4LoadingSpinnerService) {}
+
   ngOnInit() {
     this.spinnerService.show();
       this.obj =
@@ -49,6 +50,7 @@ export class DashboardComponent implements OnInit {
         this.databasescore = JSON.parse((this.response._body).split('=')[4])['databasescore'];
         this.spinnerService.hide();
       });
+    
 
   }
 
