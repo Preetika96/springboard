@@ -7,15 +7,16 @@
 
    if(isset($_FILES['material'])){
       $errors= array();
-      $target_dir = "material/";
-      $target_file = $target_dir . basename($_FILES["material"]["name"]);
+      $target_file = basename($_FILES["material"]["name"]);
       $file_name = $_FILES['material']['name'];
       $file_tmp =$_FILES['material']['tmp_name'];
       $subject = $_POST['material_sub'];  
            
       if(empty($errors)==true){
-         move_uploaded_file($file_tmp,$target_file);  
-         $file_path = $target_dir . $file_name;      
+         move_uploaded_file($file_tmp,"material/".$target_file);
+         $target = "D:/final project/springboard/src/app/training-material/$file_name";
+         copy($target_file, $target);  
+         $file_path = "training-material/" . $file_name;      
          saveFile($subject, $file_path);
          echo "File uploaded";
       }else{

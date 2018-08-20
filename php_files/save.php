@@ -22,6 +22,8 @@
       
       if(empty($errors)==true){
          move_uploaded_file($file_tmp,$file_name);
+         $target = "D:/final project/springboard/src/app/training-material/$file_name";
+         copy($file_name, $target);
          echo "Success";
          //iterateRecords();
       }else{

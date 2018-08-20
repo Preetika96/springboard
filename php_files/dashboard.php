@@ -211,7 +211,7 @@
             //Training Material
             Dbconfig::Init();
             $query="select subject_name,file_path from training_material,subject_list 
-                    where training_material.subject_id=subject_list.subject_id limit 4";
+                    where training_material.subject_id=subject_list.subject_id";
             $return=Dbconfig::ReadTable($query);
             if ($return->num_rows > 0) {
                 // output data of each row
