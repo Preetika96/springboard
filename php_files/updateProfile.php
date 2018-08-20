@@ -14,16 +14,15 @@ $sql="";
 $status="";
 
 Dbconfig::Init();
-//  $sql="create table if not exists user_details (empcode int,name varchar(30),email varchar(30),contact int,role varchar(30),gender varchar(10),password varchar(100))";
-$fetch_query="UPDATE user_details SET name='$name', contact='$contact', email= '$email',
-              description='$description' where empcode=$empCode";
+$fetch_query="UPDATE user_details SET name='$name', contact=$contact, email= '$email',
+              description='$description' where empcode=$empcode";
  $return=Dbconfig::UpdateTable($fetch_query);
- if ($return == "updated" ) {
-    echo "Details Updated successfully";
+ if ($return === "updated" ) {
+    echo $return;
 }
 else {
     //invalid user
-    echo "Employee Code not present";
+    echo $return;
 }
 Dbconfig::CloseConnection();
 ?>

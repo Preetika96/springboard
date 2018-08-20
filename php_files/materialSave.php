@@ -14,9 +14,9 @@
            
       if(empty($errors)==true){
          move_uploaded_file($file_tmp,"material/".$target_file);
-         $target = "D:/final project/springboard/src/app/training-material/$file_name";
+         $target = "F:/AngularProjects/final/springboard/src/assets/$file_name";
          copy($target_file, $target);  
-         $file_path = "training-material/" . $file_name;      
+         $file_path = "/assets/" . $file_name;      
          saveFile($subject, $file_path);
          echo "File uploaded";
       }else{

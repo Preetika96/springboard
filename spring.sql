@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.23, for Win64 (x86)
+-- MySQL dump 10.13  Distrib 5.1.33, for Win32 (ia32)
 --
 -- Host: localhost    Database: springboard
 -- ------------------------------------------------------
--- Server version	5.5.23
+-- Server version	5.1.33-community
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -37,7 +37,7 @@ CREATE TABLE `assessment_table` (
 
 LOCK TABLES `assessment_table` WRITE;
 /*!40000 ALTER TABLE `assessment_table` DISABLE KEYS */;
-INSERT INTO `assessment_table` VALUES (1,1,'Jagannath Pidaparthy',90),(1,2,'Jagannath Pidaparthy',90),(1,3,'Jagannath Pidaparthy',90),(1,4,'Jagannath Pidaparthy',90),(1,5,'Jagannath Pidaparthy',90),(1,6,'Jagannath Pidaparthy',90),(1,7,'Jagannath Pidaparthy',90),(1,8,'Jagannath Pidaparthy',90),(1,9,'Jagannath Pidaparthy',90),(2,1,'Vishal Patil',82),(2,2,'Vishal Patil',82),(2,3,'Vishal Patil',82),(2,4,'Vishal Patil',82),(2,5,'Vishal Patil',82),(2,6,'Vishal Patil',82),(2,7,'Vishal Patil',82),(2,8,'Vishal Patil',82),(2,9,'Vishal Patil',82),(3,1,'Prretika Shetty',99),(3,2,'Prretika Shetty',99),(3,3,'Prretika Shetty',99),(3,4,'Prretika Shetty',99),(3,5,'Prretika Shetty',99),(3,6,'Prretika Shetty',99),(3,7,'Prretika Shetty',99),(3,8,'Prretika Shetty',99),(3,9,'Prretika Shetty',99),(4,1,'Sagar Mishra',99),(4,2,'Sagar Mishra',99),(4,3,'Sagar Mishra',99),(4,4,'Sagar Mishra',99),(4,5,'Sagar Mishra',99),(4,6,'Sagar Mishra',99),(4,7,'Sagar Mishra',99),(4,8,'Sagar Mishra',99),(4,9,'Sagar Mishra',99),(5,1,'Shubham Mishra',93),(5,2,'Shubham Mishra',93),(5,3,'Shubham Mishra',93),(5,4,'Shubham Mishra',93),(5,5,'Shubham Mishra',93),(5,6,'Shubham Mishra',93),(5,7,'Shubham Mishra',93),(5,8,'Shubham Mishra',93),(5,9,'Shubham Mishra',93),(6,1,'Kanchan Soni',95),(6,2,'Kanchan Soni',95),(6,3,'Kanchan Soni',95),(6,4,'Kanchan Soni',95),(6,5,'Kanchan Soni',95),(6,6,'Kanchan Soni',95),(6,7,'Kanchan Soni',95),(6,8,'Kanchan Soni',95),(6,9,'Kanchan Soni',95),(7,1,'Jai Lohani',92),(7,2,'Jai Lohani',92),(7,3,'Jai Lohani',92),(7,4,'Jai Lohani',92),(7,5,'Jai Lohani',92),(7,6,'Jai Lohani',92),(7,7,'Jai Lohani',92),(7,8,'Jai Lohani',92),(7,9,'Jai Lohani',92),(8,1,'Korol Dhanda',85),(8,2,'Korol Dhanda',85),(8,3,'Korol Dhanda',85),(8,4,'Korol Dhanda',85),(8,5,'Korol Dhanda',85),(8,6,'Korol Dhanda',85),(8,7,'Korol Dhanda',85),(8,8,'Korol Dhanda',85),(8,9,'Korol Dhanda',85),(9,1,'kaustubh Srivastava',97),(9,2,'kaustubh Srivastava',97),(9,3,'kaustubh Srivastava',97),(9,4,'kaustubh Srivastava',97),(9,5,'kaustubh Srivastava',97),(9,6,'kaustubh Srivastava',97),(9,7,'kaustubh Srivastava',97),(9,8,'kaustubh Srivastava',97),(9,9,'kaustubh Srivastava',97),(10,1,'Purva Shinde',80),(10,2,'Purva Shinde',80),(10,3,'Purva Shinde',80),(10,4,'Purva Shinde',80),(10,5,'Purva Shinde',80),(10,6,'Purva Shinde',80),(10,7,'Purva Shinde',80),(10,8,'Purva Shinde',80),(10,9,'Purva Shinde',80);
+INSERT INTO `assessment_table` VALUES (52501,1,'Jagannath Pidaparthy',80),(52501,2,'Jagannath Pidaparthy',60),(52501,3,'Jagannath Pidaparthy',80),(52501,4,'Jagannath Pidaparthy',60),(52501,5,'Jagannath Pidaparthy',80),(52501,6,'Jagannath Pidaparthy',80),(52501,7,'Jagannath Pidaparthy',67),(52501,8,'Jagannath Pidaparthy',80),(52501,9,'Jagannath Pidaparthy',70),(52502,1,'Vishal Patil',80),(52502,2,'Vishal Patil',80),(52502,3,'Vishal Patil',80),(52502,4,'Vishal Patil',80),(52502,5,'Vishal Patil',80),(52502,6,'Vishal Patil',80),(52502,7,'Vishal Patil',80),(52502,8,'Vishal Patil',80),(52502,9,'Vishal Patil',82),(52503,1,'Preetika Shetty',97),(52503,2,'Preetika Shetty',97),(52503,3,'Preetika Shetty',97),(52503,4,'Preetika Shetty',97),(52503,5,'Preetika Shetty',97),(52503,6,'Preetika Shetty',97),(52503,7,'Preetika Shetty',97),(52503,8,'Preetika Shetty',97),(52503,9,'Preetika Shetty',98),(52504,1,'Sagar Mishra',96),(52504,2,'Sagar Mishra',96),(52504,3,'Sagar Mishra',96),(52504,4,'Sagar Mishra',96),(52504,5,'Sagar Mishra',96),(52504,6,'Sagar Mishra',96),(52504,7,'Sagar Mishra',96),(52504,8,'Sagar Mishra',96),(52504,9,'Sagar Mishra',96),(52505,1,'Shubham Mishra',93),(52505,2,'Shubham Mishra',93),(52505,3,'Shubham Mishra',93),(52505,4,'Shubham Mishra',93),(52505,5,'Shubham Mishra',93),(52505,6,'Shubham Mishra',93),(52505,7,'Shubham Mishra',93),(52505,8,'Shubham Mishra',93),(52505,9,'Shubham Mishra',93),(52506,1,'Kanchan Soni',95),(52506,2,'Kanchan Soni',95),(52506,3,'Kanchan Soni',95),(52506,4,'Kanchan Soni',95),(52506,5,'Kanchan Soni',95),(52506,6,'Kanchan Soni',95),(52506,7,'Kanchan Soni',95),(52506,8,'Kanchan Soni',95),(52506,9,'Kanchan Soni',95),(52507,1,'Jai Lohani',92),(52507,2,'Jai Lohani',92),(52507,3,'Jai Lohani',92),(52507,4,'Jai Lohani',92),(52507,5,'Jai Lohani',92),(52507,6,'Jai Lohani',92),(52507,7,'Jai Lohani',92),(52507,8,'Jai Lohani',92),(52507,9,'Jai Lohani',92),(52508,1,'Korol Dhanda',85),(52508,2,'Korol Dhanda',85),(52508,3,'Korol Dhanda',85),(52508,4,'Korol Dhanda',85),(52508,5,'Korol Dhanda',85),(52508,6,'Korol Dhanda',85),(52508,7,'Korol Dhanda',85),(52508,8,'Korol Dhanda',85),(52508,9,'Korol Dhanda',85),(52509,1,'kaustubh Srivastava',91),(52509,2,'kaustubh Srivastava',91),(52509,3,'kaustubh Srivastava',91),(52509,4,'kaustubh Srivastava',91),(52509,5,'kaustubh Srivastava',91),(52509,6,'kaustubh Srivastava',91),(52509,7,'kaustubh Srivastava',91),(52509,8,'kaustubh Srivastava',91),(52509,9,'kaustubh Srivastava',97),(52510,1,'Purva Shinde',90),(52510,2,'Purva Shinde',90),(52510,3,'Purva Shinde',90),(52510,4,'Purva Shinde',90),(52510,5,'Purva Shinde',90),(52510,6,'Purva Shinde',90),(52510,7,'Purva Shinde',90),(52510,8,'Purva Shinde',90),(52510,9,'Purva Shinde',80);
 /*!40000 ALTER TABLE `assessment_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,7 +53,7 @@ CREATE TABLE `subject_list` (
   `subject_name` varchar(50) DEFAULT NULL,
   `category` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`subject_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +85,7 @@ CREATE TABLE `training_material` (
 
 LOCK TABLES `training_material` WRITE;
 /*!40000 ALTER TABLE `training_material` DISABLE KEYS */;
-INSERT INTO `training_material` VALUES (1,'uploads/Builder Occupancy Certificate_Flat No.208.pdf'),(4,'material/Mongo Training.pptx'),(3,'material/JavaScript.pdf'),(1,'material/HTML_5.pdf'),(1,'material/HTML-Assignment.docx'),(2,'material/CSS_3_version_1.1.pdf'),(2,'material/CSS-Assignment.docx');
+INSERT INTO `training_material` VALUES (9,'/assets/Angular 4.pdf'),(8,'/assets/Bootstrap.pdf'),(2,'/assets/CSS_3_version_1.1.pdf'),(2,'/assets/CSS-Assignment.docx'),(5,'/assets/data_creation_script.sql'),(1,'/assets/HTML_5.pdf'),(1,'/assets/HTML-Assignment.docx'),(3,'/assets/JavaScript.pdf'),(5,'/assets/RDBMS _ SQL-Ver1.2.pdf');
 /*!40000 ALTER TABLE `training_material` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,7 +114,7 @@ CREATE TABLE `user_details` (
 
 LOCK TABLES `user_details` WRITE;
 /*!40000 ALTER TABLE `user_details` DISABLE KEYS */;
-INSERT INTO `user_details` VALUES (123456,'Tester','test@gmail.com',1234567890,'student','male','1bbd886460827015e5d605ed44252251','Tell me about yourself'),(654321,'Nisha Waikar','s@gm.com',1234567890,'trainer','female','1bbd886460827015e5d605ed44252251','Tell me about yourself'),(123321,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52508,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52498,'preetika','preetika96@gmail.com',9756464321,'student','male','1bbd886460827015e5d605ed44252251','Tell me about yourself'),(52538,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52510,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52512,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(52506,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(1234567,NULL,NULL,NULL,NULL,NULL,NULL,'Tell me about yourself'),(1,'preetika','preetika96@gmail.com',9756464321,'student','female','1bbd886460827015e5d605ed44252251','Tell me about yourself');
+INSERT INTO `user_details` VALUES (52501,'Jagannath Pidaparthy','jagan241296@gmail.com',7507079634,'student','male','1bbd886460827015e5d605ed44252251','It is done'),(52502,NULL,NULL,NULL,'student',NULL,NULL,'Tell me about yourself'),(52503,NULL,NULL,NULL,'student',NULL,NULL,'Tell me about yourself'),(52504,NULL,NULL,NULL,'student',NULL,NULL,'Tell me about yourself'),(52505,NULL,NULL,NULL,'student',NULL,NULL,'Tell me about yourself'),(52506,NULL,NULL,NULL,'student',NULL,NULL,'Tell me about yourself'),(52507,NULL,NULL,NULL,'student',NULL,NULL,'Tell me about yourself'),(52508,NULL,NULL,NULL,'student',NULL,NULL,'Tell me about yourself'),(52509,NULL,NULL,NULL,'student',NULL,NULL,'Tell me about yourself'),(52510,NULL,NULL,NULL,'student',NULL,NULL,'Tell me about yourself'),(1001,'Aruna Kameswari','aruna.kameswari@gmail.com',8799939440,'trainer','female','1bbd886460827015e5d605ed44252251','I am an awesome mother'),(1002,NULL,NULL,NULL,'trainer',NULL,NULL,'Tell me about yourself'),(1003,NULL,NULL,NULL,'trainer',NULL,NULL,'Tell me about yourself');
 /*!40000 ALTER TABLE `user_details` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -127,4 +127,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-20 17:29:08
+-- Dump completed on 2018-08-20 20:25:25

@@ -16,9 +16,10 @@ export class TrainerDashboardComponent implements OnInit {
   obj;
   response;
   materialrecords;
-  clientside;
-  serverside;
-  database;
+  clientside= {'percent': 0};
+  serverside= {'percent': 0};
+  database= {'percent': 0};
+  empcode = this.session.getEmployee_ID();
   constructor(public dialog: MatDialog, 
               private http: HttpService, 
               private session : SessionService,
@@ -28,7 +29,7 @@ export class TrainerDashboardComponent implements OnInit {
       this.obj =
       {
         'req_type': 6,
-        'empcode': this.session.getEmployee_ID()
+        'empcode': this.empcode
       }
     const headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');

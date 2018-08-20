@@ -5,9 +5,10 @@
     include 'Dbconfig.php';
     
     $received=json_decode(file_get_contents('php://input', true));
-    $request_type=$received->req_type;
+    $request_type=$received->req_type;    
     $empcode=$received->empcode;
     $return;
+    $result="";
 
     //Switch case
     switch($request_type)
@@ -25,7 +26,7 @@
                 while($row = $return->fetch_assoc()) {
                     if ($result != "") {$result .= ",";}
                     $result .= '{"subject_name":"'  . $row["subject_name"] . '",';
-                    $result .= '"file_path":"'   . explode("/", $row['file_path'])[1]  . '"}';
+                    $result .= '"file_path":"'   . explode("/", $row['file_path'])[2]  . '"}';
                 }
                 $result ='{"materialrecords":['.$result.']}=';
                 echo $result;   
@@ -38,11 +39,12 @@
 
         case "2": 
         {
-            $result="";    
+            $result="";  
             //Assessment
             // Dbconfig::Init();
-            $query="select subject_list.subject_name,assessment_table.percent from assessment_table,subject_list 
-                    where assessment_table.empcode=$empcode and subject_list.subject_id=assessment_table.subject_id limit 4";
+            $query="select subject_list.subject_name,assessment_table.percent 
+                    from assessment_table,subject_list 
+                    where assessment_table.empcode=52501 and subject_list.subject_id=assessment_table.subject_id limit 4";
             $return=Dbconfig::ReadTable($query);          
                 // output data of each row
                 while($row = $return->fetch_assoc()) {
@@ -60,10 +62,11 @@
 
         case "3": 
         {
-            $result="";    
+            $result="";   
+            $result .= '{"percent":""}=';
             //Front
             // Dbconfig::Init();
-            $query="select sum(percent) as percent from assessment_table,subject_list 
+            $query="select truncate(avg(percent),2) as percent from assessment_table,subject_list 
                     where subject_list.subject_id=assessment_table.subject_id 
                     and assessment_table.empcode=$empcode
                     and subject_list.category='Client Side'";
@@ -71,24 +74,25 @@
             if ($return->num_rows > 0) {
                 // output data of each row
                 while($row = $return->fetch_array(MYSQLI_ASSOC)) {
+                    $result="";
                     if ($result != "") {$result .= ",";}
                         $result .= '{"percent":"'  . $row["percent"] . '"}';
-                    }
-                             
-                $result ='{"clientsidescore":['.$result.']}=';
-                echo $result;
-                $return = null;
+                    }                            
             }
+            $result ='{"clientsidescore":['.$result.']}=';
+            echo $result;
+            $return = null;
             // Dbconfig::CloseConnection();
             // break;
         }
 
         case "4": 
         {
-            $result="";    
+            $result="";
+            $result = '{"percent":""}=';
             //Back
             // Dbconfig::Init();
-            $query="select sum(percent) as percent 
+            $query="select truncate(avg(percent),2) as percent 
                     from assessment_table,subject_list 
                     where assessment_table.empcode=$empcode 
                     and subject_list.subject_id=assessment_table.subject_id 
@@ -97,23 +101,25 @@
             if ($return->num_rows > 0) {
                 // output data of each row
                 while($row = $return->fetch_array(MYSQLI_ASSOC)) {
+                    $result="";
                     if ($result != "") {$result .= ",";}
                         $result .= '{"percent":"'  . $row["percent"] . '"}';
                     }
-                             
-                $result ='{"serversidescore":['.$result.']}=';
-                echo $result;
             }
+            $result ='{"serversidescore":['.$result.']}=';
+            echo $result;
+            $return = null;
             // Dbconfig::CloseConnection();
             // break;
         }
 
         case "5": 
         {
-            $result="";    
+            $result="";
+            $result .= '{"percent":""}';  
             //Database
             // Dbconfig::Init();
-            $query="select sum(percent) as percent
+            $query="select truncate(avg(percent),2) as percent
             from assessment_table,subject_list 
             where empcode=$empcode and subject_list.subject_id=assessment_table.subject_id 
             and subject_list.category='Database'";
@@ -121,13 +127,38 @@
             if ($return->num_rows > 0) {
                 // output data of each row
                 while($row = $return->fetch_array(MYSQLI_ASSOC)) {
+                    $result="";
                     if ($result != "") {$result .= ",";}
                         $result .= '{"percent":"'  . $row["percent"] . '"}';
                     }
-                             
-                $result ='{"databasescore":['.$result.']}';
-                echo $result;
             }
+            $result ='{"databasescore":['.$result.']}=';
+            echo $result;
+            // Dbconfig::CloseConnection();
+            // break;
+        }
+
+        case "11": 
+        {
+            $result="";
+            $result .= '{"percent":""}';  
+            //Database
+            // Dbconfig::Init();
+            $query="select truncate(((count(percent)/(select count(percent) from assessment_table where empcode=$empcode))*100),2) as percent
+            from assessment_table,subject_list 
+            where empcode=$empcode and subject_list.subject_id=assessment_table.subject_id 
+            and assessment_table.percent >= 70";
+            $return=Dbconfig::ReadTable($query);
+            if ($return->num_rows > 0) {
+                // output data of each row
+                while($row = $return->fetch_array(MYSQLI_ASSOC)) {
+                    $result="";
+                    if ($result != "") {$result .= ",";}
+                        $result .= '{"percent":"'  . $row["percent"] . '"}';
+                    }
+            }
+            $result ='{"passpercentage":['.$result.']}';
+            echo $result;
             Dbconfig::CloseConnection();
             break;
         }
@@ -137,7 +168,7 @@
             $result="";    
             //admin front
             Dbconfig::Init();
-            $query="select avg(percent) as percent
+            $query="select truncate(avg(percent),2) as percent
             from assessment_table,subject_list 
             where subject_list.subject_id=assessment_table.subject_id 
             and subject_list.category='Client Side'";
@@ -162,7 +193,7 @@
             $result="";    
             //admin Back
             //Dbconfig::Init();
-            $query="select avg(percent) as percent
+            $query="select truncate(avg(percent),2) as percent
             from assessment_table,subject_list 
             where subject_list.subject_id=assessment_table.subject_id 
             and subject_list.category='Server Side'";
@@ -186,7 +217,7 @@
             $result="";    
             //admin database
             //Dbconfig::Init();
-            $query="select avg(percent) as percent
+            $query="select truncate(avg(percent),2) as percent
             from assessment_table,subject_list 
             where subject_list.subject_id=assessment_table.subject_id 
             and subject_list.category='Database'";
@@ -218,7 +249,7 @@
                 while($row = $return->fetch_assoc()) {
                     if ($result != "") {$result .= ",";}
                     $result .= '{"subject_name":"'  . $row["subject_name"] . '",';
-                    $result .= '"file_path":"'   . explode("/", $row['file_path'])[1]  . '"}';
+                    $result .= '"file_path":"'   . explode("/", $row['file_path'])[2]  . '"}';
                 }
                 $result ='{"materialrecords":['.$result.']}';
                 echo $result;   
