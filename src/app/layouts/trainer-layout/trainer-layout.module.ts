@@ -18,7 +18,7 @@ import { AddMaterialsComponent } from '../../add-materials/add-materials.compone
 
 // import { IconsComponent } from '../../icons/icons.component';
 import { ShowScoreComponent } from '../../show-score/show-score.component';
-import {MatDialogModule} from '@angular/material';
+import {MatDialogModule, MatFormFieldModule} from '@angular/material';
 import { TrainingMaterialComponent } from '../../training-material/training-material.component';
 
 // import { UpgradeComponent } from '../../upgrade/upgrade.component';
@@ -28,6 +28,7 @@ import {
   MatInputModule,
   MatRippleModule,
   MatTooltipModule,
+  MatFormField
 } from '@angular/material';
 import { ShowAssessmentListComponent } from '../../show-by-students/show-assessment-list/show-assessment-list.component';
 import { ShowByAssessmentComponent } from '../../show-by-assessment/show-by-assessment.component';
@@ -46,6 +47,7 @@ import { ShowStudentListComponent } from '../../show-by-assessment/show-student-
     MatInputModule,
     MatTooltipModule,
     MatDialogModule,
+    MatFormFieldModule
    
   ],
   declarations: [
