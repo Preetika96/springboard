@@ -140,8 +140,10 @@ export class NavbarComponent implements OnInit {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes'
           }).then((result) => {
-                this.Session.unsetSession();
-                this.router.navigate(["login"]);
+              if(result.value){
+                    this.Session.unsetSession();
+                    this.router.navigate(["login"]);
+                }
             });
     }
 }

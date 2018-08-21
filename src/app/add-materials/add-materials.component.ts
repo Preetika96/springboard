@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { HttpService } from '../http.service';
 import { Constants } from '../Constants';
 import { Ng4LoadingSpinnerService } from '../../../node_modules/ng4-loading-spinner';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-add-materials',
   templateUrl: './add-materials.component.html',
@@ -62,6 +63,13 @@ export class AddMaterialsComponent implements OnInit {
       this.httpService.cpost_api(Constants.ADD_MATERIAL, _formData, 'text')
         .subscribe(data => {
           console.log(data);
+          Swal({
+            title:"Success",
+            type:"success",
+            text:"File Uploaded Successfully",
+            showConfirmButton: false,
+            timer: 2000
+          })
           this.spinnerService.hide();
         });
     }

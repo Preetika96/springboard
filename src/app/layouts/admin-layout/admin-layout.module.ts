@@ -18,6 +18,7 @@ import {
   MatRippleModule,
   MatTooltipModule,
   MatDialogActions,
+  MatFormFieldModule
 } from '@angular/material';
 @NgModule({
  
@@ -31,7 +32,7 @@ import {
     MatRippleModule,
     MatInputModule,
     MatTooltipModule,
-
+MatFormFieldModule,
     MatDialogModule
  
   ],

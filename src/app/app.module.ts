@@ -1,11 +1,11 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { MatDialogModule} from '@angular/material';
+import { MatDialogModule, MatFormFieldModule} from '@angular/material';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+// import { UserProfileComponentModule } from './user-profile/user-profile.module';
 import { AssessmentComponent } from './assessment/assessment.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -46,6 +46,10 @@ const appRoutes: Routes = [
 @NgModule({
   exports:[
     MatDialogModule,
+  
+    MatFormFieldModule
+ 
+  
 
   ],
   imports: [
@@ -54,12 +58,15 @@ const appRoutes: Routes = [
     HttpModule,
     ComponentsModule,
     MatDialogModule,
-    AppRoutingModule,
+   AppRoutingModule,
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
     Ng4LoadingSpinnerModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MatFormFieldModule,
+    // UserProfileComponentModule
+
  
   ],
   declarations: [
@@ -74,6 +81,9 @@ const appRoutes: Routes = [
     TrainerLayoutComponent,
     FrontComponent,
     DevelopersComponent,
+   
+   
+
   ],  
 
   providers: [HttpService,SessionService],

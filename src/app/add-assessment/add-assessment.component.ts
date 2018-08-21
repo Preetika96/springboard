@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { HttpService } from '../http.service';
 import { Constants } from '../Constants';
 import { Ng4LoadingSpinnerService } from '../../../node_modules/ng4-loading-spinner';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-add-assessment',
   templateUrl: './add-assessment.component.html',
@@ -73,6 +74,13 @@ export class AddAssessmentComponent implements OnInit {
 
       this.httpService.cpost_api(Constants.UPLOAD_SCORES, _formData, 'text')
         .subscribe(data => {
+          Swal({
+            title:"Success",
+            type:"success",
+            text:"Scores uploaded successfully",
+            showConfirmButton: false,
+            timer: 2000
+          })
           this.spinnerService.hide();
         });
     }
