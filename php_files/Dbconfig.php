@@ -2,7 +2,7 @@
     header('Access-Control-Allow-Origin: *');    
     define("SERVERNAME",    "localhost:3306");
     define("USERNAME",      "root");
-    define("PASSWORD",      "");
+    define("PASSWORD",      "root");
     define("DBNAME",        "springboard");
 
     class Dbconfig{
